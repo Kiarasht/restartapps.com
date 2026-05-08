@@ -1,12 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { apps, getAppBySlug } from '../data/apps';
+import { apps } from '../data/apps';
 
-const featuredShots = [
-  getAppBySlug('usajobs')?.screenshots[0],
-  getAppBySlug('iss-tracker')?.screenshots[0],
-  getAppBySlug('gsa-per-diem')?.screenshots[0]
-].filter(Boolean);
+const getDownloadValue = (downloads: string) => {
+  const normalizedDownloads = downloads.trim().toUpperCase().replace('+', '');
+  const multiplier = normalizedDownloads.endsWith('K')
+    ? 1_000
+    : normalizedDownloads.endsWith('M')
+      ? 1_000_000
+      : 1;
+  return Number.parseFloat(normalizedDownloads.replace(/[KM]/g, '')) * multiplier;
+};
+
+const homepageApps = [...apps].sort((firstApp, secondApp) => {
+  return getDownloadValue(secondApp.downloads) - getDownloadValue(firstApp.downloads);
+});
+
+const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boolean);
 ---
 
 <BaseLayout
@@ -28,7 +38,7 @@ const featuredShots = [
             <span>Total downloads</span>
           </div>
           <div class="metric">
-            <strong>{apps.length}</strong>
+            <strong>{homepageApps.length}</strong>
             <span>Android apps</span>
           </div>
         </div>
@@ -62,7 +72,7 @@ const featuredShots = [
 
       <div class="app-grid">
         {
-          apps.map((app, index) => (
+          homepageApps.map((app, index) => (
             <a class="app-card" href={`/apps/${app.slug}`} data-reveal style={`--reveal-delay: ${index * 90}ms`}>
               <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
               <div>
