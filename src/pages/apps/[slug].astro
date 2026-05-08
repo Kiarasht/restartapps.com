@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { apps } from '../../data/apps';
+
+export function getStaticPaths() {
+  return apps.map((app) => ({
+    params: { slug: app.slug },
+    props: { app }
+  }));
+}
+
+const app = Astro.props.app;
+---
+
+<BaseLayout title={`${app.name} | Restart Apps`} description={app.shortDescription}>
+  <main class="main">
+    <section class="detail-hero">
+      <div>
+        <div class="detail-title-row">
+          <img class="app-icon" src={app.icon} alt={`${app.name} icon`} />
+          <div>
+            <p class="eyebrow">{app.eyebrow}</p>
+            <h1>{app.name}</h1>
+          </div>
+        </div>
+        <p class="detail-copy">{app.description}</p>
+        <div class="pill-row" aria-label={`${app.name} platforms`}>
+          {app.platforms.map((platform) => <span class="pill">{platform}</span>)}
+        </div>
+        <div class="hero-actions">
+          {app.links.map((link) => <a class="button primary" href={link.href}>{link.label}</a>)}
+          <a class="button secondary" href="/support">Support</a>
+        </div>
+      </div>
+
+      <div class="screenshot-row" aria-label={`${app.name} screenshots`}>
+        {
+          app.screenshots.map((screenshot, index) => (
+            <div class="screenshot-frame">
+              <img src={screenshot} alt={`${app.name} screenshot ${index + 1}`} loading="lazy" />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">{app.status}</p>
+        <h2>Built for the task</h2>
+      </div>
+      <ul class="feature-list">
+        {app.detailHighlights.map((highlight) => <li>{highlight}</li>)}
+      </ul>
+    </section>
+  </main>
+</BaseLayout>

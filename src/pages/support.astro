@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { apps } from '../data/apps';
+---
+
+<BaseLayout title="Support | Restart Apps" description="Get support for Restart Apps mobile apps.">
+  <main class="main">
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Support</p>
+        <h2>Help with Restart Apps</h2>
+        <p>
+          Choose the app you need help with and include your device model, Android version, and a
+          short description of what happened.
+        </p>
+      </div>
+
+      <div class="app-grid">
+        {
+          apps.map((app) => (
+            <a
+              class="app-card"
+              href={`mailto:support@restartapps.com?subject=${encodeURIComponent(`${app.name} support`)}`}
+            >
+              <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
+              <div>
+                <p class="eyebrow">{app.name}</p>
+                <h3>Email support</h3>
+                <p>Send a support request for {app.name}.</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

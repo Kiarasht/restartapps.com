@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Restart Apps">
+  <rect width="64" height="64" rx="14" fill="#234f9b"/>
+  <path d="M16 18h20c8 0 14 5 14 13 0 5-3 10-8 12l9 12H39l-8-11h-5v11H16V18Zm10 9v9h10c3 0 5-2 5-5s-2-4-5-4H26Z" fill="#fff"/>
+  <path d="M48 18v12H36l12-12Z" fill="#c93636"/>
+</svg>

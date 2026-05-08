@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Restart Apps',
+  description = 'Independent mobile apps from Restart Apps.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Restart Apps</span>
+          </a>
+          <div class="nav-links">
+            <a href="/#apps">Apps</a>
+            <a href="/support">Support</a>
+            <a href="/privacy">Privacy</a>
+          </div>
+        </nav>
+      </header>
+
+      <slot />
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <span>© {new Date().getFullYear()} Restart Apps</span>
+          <span>Independent mobile apps built with care.</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { apps } from '../data/apps';
+
+const featuredShots = [apps[0].screenshots[0], apps[1].screenshots[0], apps[0].screenshots[1]];
+---
+
+<BaseLayout
+  title="Restart Apps | Practical mobile apps"
+  description="Restart Apps builds practical Android apps for job search, space tracking, and everyday tools."
+>
+  <main class="main">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Independent Android apps</p>
+        <h1>Restart Apps</h1>
+        <p class="hero-copy">
+          Practical mobile apps for focused tasks, from finding federal jobs to tracking the
+          International Space Station.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#apps">View apps</a>
+          <a class="button secondary" href="/support">Get support</a>
+        </div>
+      </div>
+
+      <div class="showcase" aria-label="App screenshots">
+        <div class="phone-stack">
+          {
+            featuredShots.map((shot, index) => (
+              <div class={`phone-shot ${['first', 'second', 'third'][index]}`}>
+                <img src={shot} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="section-header">
+        <h2>Apps</h2>
+        <p>Each app gets its own detail page for store links, screenshots, support, and policies.</p>
+      </div>
+
+      <div class="app-grid">
+        {
+          apps.map((app) => (
+            <a class="app-card" href={`/apps/${app.slug}`}>
+              <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
+              <div>
+                <p class="eyebrow">{app.eyebrow}</p>
+                <h3>{app.name}</h3>
+                <p>{app.shortDescription}</p>
+                <div class="pill-row" aria-label={`${app.name} features`}>
+                  {app.highlights.map((highlight) => (
+                    <span class="pill">{highlight}</span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>
