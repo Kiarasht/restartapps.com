@@ -11,20 +11,24 @@ const featuredShots = [apps[0].screenshots[0], apps[1].screenshots[0], apps[0].s
 >
   <main class="main">
     <section class="hero">
-      <div>
-        <p class="eyebrow">Independent Android apps</p>
-        <h1>Restart Apps</h1>
-        <p class="hero-copy">
+      <div class="hero-content" data-reveal>
+        <p class="eyebrow kinetic-label">Independent Android apps</p>
+        <h1 class="headline">Restart Apps</h1>
+        <p class="hero-copy" data-reveal>
           Practical mobile apps for focused tasks, from finding federal jobs to tracking the
           International Space Station.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions" data-reveal>
           <a class="button primary" href="#apps">View apps</a>
           <a class="button secondary" href="/support">Get support</a>
         </div>
       </div>
 
       <div class="showcase" aria-label="App screenshots">
+        <span class="motion-ribbon ribbon-a" aria-hidden="true"></span>
+        <span class="motion-ribbon ribbon-b" aria-hidden="true"></span>
+        <span class="signal-line line-a" aria-hidden="true"></span>
+        <span class="signal-line line-b" aria-hidden="true"></span>
         <div class="phone-stack">
           {
             featuredShots.map((shot, index) => (
@@ -38,15 +42,15 @@ const featuredShots = [apps[0].screenshots[0], apps[1].screenshots[0], apps[0].s
     </section>
 
     <section class="section" id="apps">
-      <div class="section-header">
+      <div class="section-header" data-reveal>
         <h2>Apps</h2>
         <p>Each app gets its own detail page for store links, screenshots, support, and policies.</p>
       </div>
 
       <div class="app-grid">
         {
-          apps.map((app) => (
-            <a class="app-card" href={`/apps/${app.slug}`}>
+          apps.map((app, index) => (
+            <a class="app-card" href={`/apps/${app.slug}`} data-reveal style={`--reveal-delay: ${index * 90}ms`}>
               <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
               <div>
                 <p class="eyebrow">{app.eyebrow}</p>

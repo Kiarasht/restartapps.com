@@ -6,7 +6,7 @@ import { apps } from '../data/apps';
 <BaseLayout title="Support | Restart Apps" description="Get support for Restart Apps mobile apps.">
   <main class="main">
     <section class="section">
-      <div class="section-header">
+      <div class="section-header" data-reveal>
         <p class="eyebrow">Support</p>
         <h2>Help with Restart Apps</h2>
         <p>
@@ -17,10 +17,12 @@ import { apps } from '../data/apps';
 
       <div class="app-grid">
         {
-          apps.map((app) => (
+          apps.map((app, index) => (
             <a
               class="app-card"
               href={`mailto:support@restartapps.com?subject=${encodeURIComponent(`${app.name} support`)}`}
+              data-reveal
+              style={`--reveal-delay: ${index * 90}ms`}
             >
               <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
               <div>

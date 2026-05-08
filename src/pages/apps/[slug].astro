@@ -15,19 +15,19 @@ const app = Astro.props.app;
 <BaseLayout title={`${app.name} | Restart Apps`} description={app.shortDescription}>
   <main class="main">
     <section class="detail-hero">
-      <div>
+      <div data-reveal>
         <div class="detail-title-row">
           <img class="app-icon" src={app.icon} alt={`${app.name} icon`} />
           <div>
-            <p class="eyebrow">{app.eyebrow}</p>
-            <h1>{app.name}</h1>
+            <p class="eyebrow kinetic-label">{app.eyebrow}</p>
+            <h1 class="headline">{app.name}</h1>
           </div>
         </div>
-        <p class="detail-copy">{app.description}</p>
-        <div class="pill-row" aria-label={`${app.name} platforms`}>
+        <p class="detail-copy" data-reveal>{app.description}</p>
+        <div class="pill-row" aria-label={`${app.name} platforms`} data-reveal>
           {app.platforms.map((platform) => <span class="pill">{platform}</span>)}
         </div>
-        <div class="hero-actions">
+        <div class="hero-actions" data-reveal>
           {app.links.map((link) => <a class="button primary" href={link.href}>{link.label}</a>)}
           <a class="button secondary" href="/support">Support</a>
         </div>
@@ -36,7 +36,7 @@ const app = Astro.props.app;
       <div class="screenshot-row" aria-label={`${app.name} screenshots`}>
         {
           app.screenshots.map((screenshot, index) => (
-            <div class="screenshot-frame">
+            <div class="screenshot-frame" data-reveal style={`--reveal-delay: ${index * 100}ms`}>
               <img src={screenshot} alt={`${app.name} screenshot ${index + 1}`} loading="lazy" />
             </div>
           ))
@@ -45,12 +45,16 @@ const app = Astro.props.app;
     </section>
 
     <section class="section">
-      <div class="section-header">
+      <div class="section-header" data-reveal>
         <p class="eyebrow">{app.status}</p>
         <h2>Built for the task</h2>
       </div>
       <ul class="feature-list">
-        {app.detailHighlights.map((highlight) => <li>{highlight}</li>)}
+        {
+          app.detailHighlights.map((highlight, index) => (
+            <li data-reveal style={`--reveal-delay: ${index * 90}ms`}>{highlight}</li>
+          ))
+        }
       </ul>
     </section>
   </main>
