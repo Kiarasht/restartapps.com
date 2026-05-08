@@ -7,7 +7,6 @@ const featuredShots = [
   getAppBySlug('iss-tracker')?.screenshots[0],
   getAppBySlug('gsa-per-diem')?.screenshots[0]
 ].filter(Boolean);
-const supportHref = 'mailto:restartapplication@gmail.com?subject=Restart%20Apps%20support';
 ---
 
 <BaseLayout
@@ -35,7 +34,7 @@ const supportHref = 'mailto:restartapplication@gmail.com?subject=Restart%20Apps%
         </div>
         <div class="hero-actions" data-reveal>
           <a class="button primary" href="#apps">View apps</a>
-          <a class="button secondary" href={supportHref}>Get support</a>
+          <a class="button secondary" href="/support">Get support</a>
         </div>
       </div>
 

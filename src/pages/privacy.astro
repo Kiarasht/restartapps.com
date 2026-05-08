@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactEmail = 'restartapplication@gmail.com';
+const effectiveDate = 'May 8, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy | Restart Apps"
+  description="Website privacy policy for restartapps.com."
+>
+  <main class="main">
+    <section class="section legal-page">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Restart Apps</p>
+        <h1>Privacy Policy</h1>
+        <p class="legal-updated">Effective date: {effectiveDate}</p>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-block" data-reveal>
+          <h2>Overview</h2>
+          <p>
+            This Privacy Policy explains how Restart Apps ("we", "us", or "our") handles
+            information when you visit restartapps.com (the "Website").
+          </p>
+          <p>
+            This policy applies to the Website itself. Each mobile app may have its own privacy
+            policy that explains app-specific data practices, permissions, analytics, ads, and
+            third-party services.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Information We Collect Directly</h2>
+          <p>
+            The Website does not currently provide user accounts, checkout, comments, contact
+            forms, or newsletter signups. We do not ask you to submit personal information directly
+            through the Website.
+          </p>
+          <p>
+            If you choose to email us for support, we will receive the information you include in
+            that email, such as your email address, app name, device details, and your message.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Automatically Processed Information</h2>
+          <p>
+            Like most websites, hosting providers, browsers, and network services may process
+            technical information needed to deliver the Website, such as IP address, browser type,
+            device information, requested pages, dates and times, and error logs.
+          </p>
+          <p>
+            We use this information to operate, secure, troubleshoot, and improve the Website.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Analytics, Cookies, and Tracking</h2>
+          <p>
+            The Website does not currently use analytics scripts, advertising pixels, account
+            cookies, or behavior-tracking tools.
+          </p>
+          <p>
+            If we add analytics, cookies, or similar tracking technologies later, we will update
+            this Privacy Policy to describe what is collected and how it is used.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>How We Use Information</h2>
+          <ul>
+            <li>Operate and display the Website.</li>
+            <li>Respond to support emails and questions you send us.</li>
+            <li>Diagnose technical issues, security problems, and Website errors.</li>
+            <li>Improve Website content, app support pages, and app information.</li>
+          </ul>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Third-Party Links</h2>
+          <p>
+            The Website links to third-party services, including Google Play, app stores, official
+            data providers, and other external websites. Those services are governed by their own
+            privacy policies and terms.
+          </p>
+          <p>
+            We are not responsible for the privacy practices, content, or security of third-party
+            websites.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Data Sharing</h2>
+          <p>
+            We do not sell personal information collected through the Website. We may share
+            information when needed to operate the Website, respond to your requests, comply with
+            law, protect rights and safety, or work with service providers that help host or
+            support the Website.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Children's Privacy</h2>
+          <p>
+            The Website is not directed to children under 13, and we do not knowingly collect
+            personal information from children under 13 through the Website.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Security</h2>
+          <p>
+            We use reasonable measures to protect the Website, but no method of transmission over
+            the Internet or electronic storage is completely secure.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Changes and Contact</h2>
+          <p>
+            We may update this Privacy Policy from time to time. When we do, we will update the
+            effective date above.
+          </p>
+          <p>
+            If you have questions about this Privacy Policy, contact us at
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

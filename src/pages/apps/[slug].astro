@@ -10,7 +10,6 @@ export function getStaticPaths() {
 }
 
 const app = Astro.props.app;
-const supportHref = `mailto:restartapplication@gmail.com?subject=${encodeURIComponent(`${app.name} support`)}`;
 ---
 
 <BaseLayout title={`${app.name} | Restart Apps`} description={app.shortDescription}>
@@ -36,7 +35,7 @@ const supportHref = `mailto:restartapplication@gmail.com?subject=${encodeURIComp
         </div>
         <div class="hero-actions" data-reveal>
           {app.links.map((link) => <a class="button primary" href={link.href}>{link.label}</a>)}
-          <a class="button secondary" href={supportHref}>Support</a>
+          <a class="button secondary" href="/support">Support</a>
         </div>
       </div>
 

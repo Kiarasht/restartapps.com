@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const supportEmail = 'restartapplication@gmail.com';
+const supportHref = 'mailto:restartapplication@gmail.com?subject=Restart%20Apps%20support';
 ---
 
 <BaseLayout title="Support | Restart Apps" description="Get support for Restart Apps mobile apps.">
@@ -9,15 +12,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="eyebrow">Support</p>
         <h2>Help with Restart Apps</h2>
         <p>
-          Email support and include the app name, your device model, Android version, and a short
-          description of what happened.
+          Need help with one of our apps? Email us and include the app name, your device model,
+          Android version, and a short description of what happened.
+        </p>
+        <p class="contact-email">
+          <a href={supportHref} data-mailto-link>{supportEmail}</a>
         </p>
         <div class="hero-actions" data-reveal>
-          <a class="button primary" href="mailto:restartapplication@gmail.com?subject=Restart%20Apps%20support">
-            Email support
-          </a>
+          <a class="button primary" href={supportHref} data-mailto-link>Email support</a>
         </div>
       </div>
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('[data-mailto-link]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = link.getAttribute('href');
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
+</script>
