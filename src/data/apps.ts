@@ -27,9 +27,9 @@ export const apps: AppProject[] = [
       'US Per Diem helps travelers look up GSA lodging and meals and incidental expense rates by fiscal year, state, city, county, or ZIP code, then generate per diem expense reports for trips.',
     icon: '/assets/gsa-per-diem/icon.png',
     screenshots: [
-      '/assets/gsa-per-diem/screenshot-1.png',
-      '/assets/gsa-per-diem/screenshot-2.png',
-      '/assets/gsa-per-diem/screenshot-3.png'
+      '/assets/gsa-per-diem/screenshot-1-v2.png',
+      '/assets/gsa-per-diem/screenshot-2-v2.png',
+      '/assets/gsa-per-diem/screenshot-3-v2.png'
     ],
     status: 'Available on Android',
     downloads: '1K+',
