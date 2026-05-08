@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { apps } from '../data/apps';
 ---
 
 <BaseLayout title="Support | Restart Apps" description="Get support for Restart Apps mobile apps.">
@@ -10,29 +9,14 @@ import { apps } from '../data/apps';
         <p class="eyebrow">Support</p>
         <h2>Help with Restart Apps</h2>
         <p>
-          Choose the app you need help with and include your device model, Android version, and a
-          short description of what happened.
+          Email support and include the app name, your device model, Android version, and a short
+          description of what happened.
         </p>
-      </div>
-
-      <div class="app-grid">
-        {
-          apps.map((app, index) => (
-            <a
-              class="app-card"
-              href={`mailto:support@restartapps.com?subject=${encodeURIComponent(`${app.name} support`)}`}
-              data-reveal
-              style={`--reveal-delay: ${index * 90}ms`}
-            >
-              <img class="app-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
-              <div>
-                <p class="eyebrow">{app.name}</p>
-                <h3>Email support</h3>
-                <p>Send a support request for {app.name}.</p>
-              </div>
-            </a>
-          ))
-        }
+        <div class="hero-actions" data-reveal>
+          <a class="button primary" href="mailto:restartapplication@gmail.com?subject=Restart%20Apps%20support">
+            Email support
+          </a>
+        </div>
       </div>
     </section>
   </main>

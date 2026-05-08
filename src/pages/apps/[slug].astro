@@ -10,6 +10,7 @@ export function getStaticPaths() {
 }
 
 const app = Astro.props.app;
+const supportHref = `mailto:restartapplication@gmail.com?subject=${encodeURIComponent(`${app.name} support`)}`;
 ---
 
 <BaseLayout title={`${app.name} | Restart Apps`} description={app.shortDescription}>
@@ -27,9 +28,15 @@ const app = Astro.props.app;
         <div class="pill-row" aria-label={`${app.name} platforms`} data-reveal>
           {app.platforms.map((platform) => <span class="pill">{platform}</span>)}
         </div>
+        <div class="hero-metrics detail-metrics" data-reveal>
+          <div class="metric">
+            <strong>{app.downloads}</strong>
+            <span>Downloads</span>
+          </div>
+        </div>
         <div class="hero-actions" data-reveal>
           {app.links.map((link) => <a class="button primary" href={link.href}>{link.label}</a>)}
-          <a class="button secondary" href="/support">Support</a>
+          <a class="button secondary" href={supportHref}>Support</a>
         </div>
       </div>
 
@@ -56,6 +63,17 @@ const app = Astro.props.app;
           ))
         }
       </ul>
+    </section>
+
+    <section class="section compact-section">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">Legal</p>
+        <h2>{app.name} policies</h2>
+      </div>
+      <div class="legal-link-row" data-reveal>
+        <a class="button secondary" href={`/apps/${app.slug}/privacy`}>Privacy Policy</a>
+        <a class="button secondary" href={`/apps/${app.slug}/terms`}>Terms of Use</a>
+      </div>
     </section>
   </main>
 </BaseLayout>

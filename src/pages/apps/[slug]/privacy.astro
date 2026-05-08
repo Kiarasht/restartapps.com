@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { apps } from '../../../data/apps';
+
+export function getStaticPaths() {
+  return apps.map((app) => ({
+    params: { slug: app.slug },
+    props: { app }
+  }));
+}
+
+const app = Astro.props.app;
+const isUsaJobs = app.slug === 'usajobs';
+const isGsaPerDiem = app.slug === 'gsa-per-diem';
+const effectiveDate = isUsaJobs ? 'May 8, 2026' : isGsaPerDiem ? 'August 29, 2025' : 'August 28, 2025';
+const contactEmail = 'restartapplication@gmail.com';
+const googlePrivacyUrl = 'https://policies.google.com/privacy';
+const officialUsaJobsUrl = 'https://www.usajobs.gov/';
+---
+
+<BaseLayout title={`${app.name} Privacy Policy | Restart Apps`} description={`Privacy Policy for ${app.name}.`}>
+  <main class="main">
+    <section class="section legal-page">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">{app.name}</p>
+        <h1>Privacy Policy</h1>
+        <p class="legal-updated">Effective date: {effectiveDate}</p>
+      </div>
+
+      {
+        isUsaJobs ? (
+          <div class="legal-content">
+            <section class="legal-block" data-reveal>
+              <h2>Overview</h2>
+              <p>
+                This Privacy Policy explains how the USAJobs mobile application ("App", "Service",
+                "we", "us", or "our") handles information when you use the Service.
+              </p>
+              <p>
+                The App helps users search federal job listings, save jobs, save search filters,
+                create job alerts, receive local notifications, and optionally sign in with Google
+                to personalize and sync parts of the experience.
+              </p>
+              <p>
+                The App is not an official government application and is not affiliated with,
+                endorsed by, or sponsored by USAJOBS, the U.S. Office of Personnel Management, or
+                any federal agency.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Information You Choose to Store</h2>
+              <p>
+                The App stores information needed for app features to work. This may include saved
+                jobs, saved searches, search history, filter selections, onboarding state, job alert
+                preferences, saved job reminder preferences, notification settings, and related app
+                state.
+              </p>
+              <p>
+                If you use guest mode, this information is generally stored on your device. If you
+                sign in with Google, selected user activity such as saved jobs, job alerts, and
+                search history may be synced with Firebase so you can continue across devices.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Google Sign-In and Firebase</h2>
+              <p>
+                If you choose to sign in with Google, the App uses Google Sign-In and Firebase
+                Authentication. Google and Firebase may provide access to basic account information
+                associated with your Google account, such as your display name, email address,
+                profile photo, and authentication identifiers needed to keep you signed in.
+              </p>
+              <p>
+                The App may use Firebase services, including Firebase Authentication, Cloud
+                Firestore, Firebase Analytics, and Firebase Crashlytics, to support sign-in, sync,
+                analytics, diagnostics, and crash reporting.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Job Search and Alerts</h2>
+              <p>
+                When you search for jobs, apply filters, open job details, or create alerts, the
+                App sends related search parameters to USAJOBS data services so matching job
+                listings can be returned. These parameters may include keywords, location text,
+                agency or department selections, pay or grade filters, remote preferences, schedule
+                filters, and similar search criteria.
+              </p>
+              <p>
+                Job alert schedules, alert filters, and newly detected alert matches may be stored
+                locally on your device. Alert match snapshots are stored to help you view jobs that
+                triggered a notification.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Permissions</h2>
+              <p>
+                <b>Notifications:</b> If you grant notification permission, the App can send job
+                alert notifications, saved job reminders, and related local notifications to your
+                device.
+              </p>
+              <p>
+                <b>Approximate location:</b> The App may request approximate location permission to
+                support location-aware job discovery and related onboarding flows. We do not state
+                that we collect precise GPS location through our own servers.
+              </p>
+              <p>
+                <b>Internet:</b> Internet access is used to retrieve job data, maps, ads, analytics,
+                authentication, and cloud sync services.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Advertising and Google AdMob</h2>
+              <p>
+                The App may include advertising features through Google AdMob. Google and its
+                partners may automatically collect information such as advertising ID, device
+                identifiers, IP address, approximate location, device and operating system details,
+                and ad interaction data to serve, measure, and improve ads.
+              </p>
+              <p>
+                Depending on your region and the App configuration, ads may be personalized or
+                non-personalized, and you may be shown a consent message before ads are requested.
+                For more information about how Google handles data, review Google's Privacy Policy:
+                <a href={googlePrivacyUrl}>{googlePrivacyUrl}</a>.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>How We Use Information</h2>
+              <ul>
+                <li>Retrieve and display job listings and job details from USAJOBS.</li>
+                <li>Save your jobs, searches, filters, reminders, and job alert preferences.</li>
+                <li>Sync selected saved activity across devices when you sign in.</li>
+                <li>Create and deliver job alert notifications and saved job reminders.</li>
+                <li>Show your Google profile information in the App when signed in.</li>
+                <li>Measure app usage, improve reliability, and troubleshoot crashes.</li>
+                <li>Support advertising, consent handling, ad measurement, and fraud prevention.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Data Sharing and Third Parties</h2>
+              <p>We do not sell your personal information.</p>
+              <p>
+                The App relies on third-party services and public data providers that may process
+                data under their own terms and privacy policies, including:
+              </p>
+              <ul>
+                <li>USAJOBS data services, which provide the federal job information displayed in the App.</li>
+                <li>Google Sign-In and Firebase Authentication, if you choose to sign in.</li>
+                <li>Cloud Firestore, Firebase Analytics, and Firebase Crashlytics.</li>
+                <li>Google Maps, Google Play services, and device location services.</li>
+                <li>Google AdMob and related Google advertising or consent tools, if ads are enabled.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Storage and Retention</h2>
+              <p>
+                Saved jobs, search history, filters, onboarding status, alert settings, notification
+                settings, and related app state are stored until you remove them, clear app data,
+                uninstall the App, or use available in-app controls.
+              </p>
+              <p>
+                If you sign in with Google, synced app data may remain associated with your Firebase
+                user account until it is deleted or overwritten according to app functionality.
+                Your authentication state is managed through Google and Firebase and may persist
+                until you sign out.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Your Choices</h2>
+              <ul>
+                <li>You can use guest mode instead of signing in.</li>
+                <li>You can sign out to stop future account-based sync on that device.</li>
+                <li>You can deny or revoke location and notification permissions in device settings.</li>
+                <li>You can manage advertising consent choices where the App presents privacy options.</li>
+                <li>You can clear saved jobs, alerts, and search history where those controls are available.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>External Services and Official Sources</h2>
+              <p>
+                Federal job listings and related details shown in the App are sourced from USAJOBS
+                data services. Official information and application actions should be verified
+                through the official USAJOBS service: <a href={officialUsaJobsUrl}>{officialUsaJobsUrl}</a>.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Children's Privacy</h2>
+              <p>
+                The App is not directed to children under 13, and we do not knowingly collect
+                personal information from children under 13.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Security</h2>
+              <p>
+                We use commercially reasonable measures provided by the Android platform and the
+                third-party services we rely on. However, no method of transmission over the
+                Internet or electronic storage is completely secure, and we cannot guarantee
+                absolute security.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Changes and Contact</h2>
+              <p>
+                We may update this Privacy Policy from time to time. When we do, we will update the
+                effective date shown above. Your continued use of the App after changes become
+                effective means you accept the updated policy.
+              </p>
+              <p>
+                If you have questions about this Privacy Policy, contact us at
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+              </p>
+            </section>
+          </div>
+        ) : (
+          <div class="legal-content">
+            <section class="legal-block" data-reveal>
+              <h2>Overview</h2>
+              <p>
+                This Privacy Policy describes our policies and procedures on the collection, use,
+                and disclosure of your information when you use {app.name}.
+              </p>
+              {
+                isGsaPerDiem ? (
+                  <p>
+                    US Per Diem helps users look up GSA per diem rates, review lodging and M&amp;IE
+                    amounts, favorite locations, and generate trip expense reports.
+                  </p>
+                ) : (
+                  <p>
+                    ISS Tracker lets users track the International Space Station, view upcoming
+                    visible passes and sky paths, follow related space information, and enable
+                    alerts for viewing opportunities.
+                  </p>
+                )
+              }
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Information We Do Not Require</h2>
+              <p>
+                {app.name} does not require you to create an account or provide personal
+                information such as your name, email address, or phone number to use the App.
+                {isGsaPerDiem && ' The App does not collect or track your location.'}
+              </p>
+            </section>
+
+            {
+              isGsaPerDiem ? (
+                <section class="legal-block" data-reveal>
+                  <h2>Information We Collect and Use</h2>
+                  <p>
+                    The App may store preferences such as favorited locations and generated report
+                    inputs locally on your device so app features can work. The App uses Internet
+                    access to fetch per diem rate data and may display advertisements through Google
+                    AdMob.
+                  </p>
+                </section>
+              ) : (
+                <section class="legal-block" data-reveal>
+                  <h2>Location Data</h2>
+                  <p>
+                    With your explicit permission, the App may access your device's location data,
+                    including latitude and longitude.
+                  </p>
+                  <p>
+                    This information is used to calculate the position of the International Space
+                    Station relative to you, predict fly-over times for your location, show sky path
+                    and map features, and configure ISS pass alerts. Location data is processed for
+                    app functionality and is not stored on our servers.
+                  </p>
+                  <p>
+                    If you enable automatic pass alerts, alert location details may be saved locally
+                    on your device so scheduled alert features can continue to work after setup.
+                  </p>
+                </section>
+              )
+            }
+
+            <section class="legal-block" data-reveal>
+              <h2>Usage Data and Advertising</h2>
+              <p>
+                The App uses Google AdMob to display advertisements. AdMob may collect Usage Data,
+                including your device's advertising identifier, IP address, device type, operating
+                system, approximate location, and information about your interaction with ads.
+              </p>
+              <p>
+                We do not have access to or control over all data collected by Google AdMob. Review
+                Google's Privacy Policy for more information:
+                <a href={googlePrivacyUrl}>{googlePrivacyUrl}</a>.
+              </p>
+              <p>
+                Depending on your region, the App may show privacy choices or consent messages
+                through Google User Messaging Platform before requesting ads.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Firebase Analytics</h2>
+              <p>
+                The App may use Firebase Analytics to understand app usage, improve features, and
+                measure performance. Analytics data may include device information, app interactions,
+                and usage events collected by Firebase.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Permissions Required</h2>
+              <p>
+                <b>Internet:</b> Used to fetch {isGsaPerDiem ? 'the latest per diem rate data' : 'third-party data such as ISS location, astronaut information, map data'} and advertising content.
+              </p>
+              {!isGsaPerDiem && (
+                <>
+                  <p>
+                    <b>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</b> Used for location-specific
+                    ISS visibility, sky path, map, and alert features. This permission is optional
+                    and only used if you grant it.
+                  </p>
+                  <p>
+                    <b>Notifications:</b> Used to notify you about ISS pass alerts if you enable
+                    notifications.
+                  </p>
+                  <p>
+                    <b>Alarm and boot permissions:</b> Used to schedule and restore pass alerts
+                    where supported by Android.
+                  </p>
+                </>
+              )}
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Third-Party Libraries and Services</h2>
+              <p>The App uses third-party libraries and services to provide functionality, including:</p>
+              <ul>
+                {!isGsaPerDiem && <li>Google Maps, Google Play services, and device location APIs.</li>}
+                {!isGsaPerDiem && <li>Firebase Analytics.</li>}
+                <li>Google AdMob and Google User Messaging Platform.</li>
+                <li>{isGsaPerDiem ? 'GSA data services for per diem rate information.' : 'Third-party APIs for ISS location, pass prediction, astronaut, and related space information.'}</li>
+                <li>AndroidX, Jetpack Compose, Retrofit, OkHttp, Hilt, Coil, Glide, and related app libraries.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Your Choices</h2>
+              <ul>
+                {!isGsaPerDiem && <li>You can enable or disable location permissions through device settings.</li>}
+                {!isGsaPerDiem && <li>You can enable or disable notifications through device settings.</li>}
+                <li>You can manage advertising consent choices where the App presents privacy options.</li>
+                <li>You can clear local app data or uninstall the App to remove locally stored preferences.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Data Security</h2>
+              <p>
+                We value your trust and use commercially acceptable means of protecting information.
+                However, no method of transmission over the Internet or electronic storage is 100%
+                secure and reliable, and we cannot guarantee absolute security.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Children's Privacy</h2>
+              <p>
+                This Service does not address anyone under the age of 13. We do not knowingly
+                collect personally identifiable information from children under 13.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Changes and Contact</h2>
+              <p>
+                We may update this Privacy Policy from time to time. Changes are effective after
+                they are posted on this page.
+              </p>
+              <p>
+                If you have questions or suggestions about this Privacy Policy, contact us at
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+              </p>
+            </section>
+          </div>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

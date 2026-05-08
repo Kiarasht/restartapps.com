@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { apps } from '../../../data/apps';
+
+export function getStaticPaths() {
+  return apps.map((app) => ({
+    params: { slug: app.slug },
+    props: { app }
+  }));
+}
+
+const app = Astro.props.app;
+const isUsaJobs = app.slug === 'usajobs';
+const isGsaPerDiem = app.slug === 'gsa-per-diem';
+const effectiveDate = isUsaJobs ? 'May 8, 2026' : isGsaPerDiem ? 'August 29, 2025' : 'August 28, 2025';
+const contactEmail = 'restartapplication@gmail.com';
+const officialUsaJobsUrl = 'https://www.usajobs.gov/';
+---
+
+<BaseLayout title={`${app.name} Terms of Use | Restart Apps`} description={`Terms of Use for ${app.name}.`}>
+  <main class="main">
+    <section class="section legal-page">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">{app.name}</p>
+        <h1>Terms of Use</h1>
+        <p class="legal-updated">Effective date: {effectiveDate}</p>
+      </div>
+
+      {
+        isUsaJobs ? (
+          <div class="legal-content">
+            <section class="legal-block" data-reveal>
+              <h2>Agreement</h2>
+              <p>
+                These Terms of Use govern your access to and use of the USAJobs mobile application
+                ("App", "Service", "we", "us", or "our"). By downloading, accessing, or using the
+                App, you agree to these Terms.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Purpose of the App</h2>
+              <p>
+                The App is designed to help users browse federal job listings, save jobs, save
+                search filters, create job alerts, receive reminders, and access official job
+                application pages.
+              </p>
+              <p>
+                The App is an independent application. It is not an official government application
+                and is not affiliated with, endorsed by, or sponsored by USAJOBS, the U.S. Office
+                of Personnel Management, or any federal agency.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Eligibility and Acceptable Use</h2>
+              <p>
+                You may use the App only for lawful purposes and in compliance with applicable
+                laws, regulations, and platform rules. You agree not to misuse the App, interfere
+                with its normal operation, attempt unauthorized access, reverse engineer the App
+                except where permitted by law, or use the App in a way that could damage the
+                Service or other users.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Job Information and Official Applications</h2>
+              <p>
+                Job listings, salaries, requirements, deadlines, agency information, locations, and
+                other employment-related details are provided for convenience and informational
+                purposes only. We do not guarantee that any listing or detail is complete, current,
+                accurate, or still available.
+              </p>
+              <p>
+                You are responsible for verifying all job information, deadlines, and eligibility
+                requirements through the official USAJOBS service before relying on that information
+                or submitting an application. Official USAJOBS information is available at
+                <a href={officialUsaJobsUrl}>{officialUsaJobsUrl}</a>.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Alerts, Notifications, and Saved Content</h2>
+              <p>
+                The App may let you save jobs, save searches, create job alerts, view jobs that
+                triggered alert notifications, and receive saved job reminders. Alerts and
+                notifications are provided as a convenience only. We do not guarantee that alerts
+                will be sent on time, delivered successfully, or include every relevant opening.
+              </p>
+              <p>
+                You are responsible for monitoring official sources for application deadlines and
+                updates.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Accounts and Authentication</h2>
+              <p>
+                Certain personalization and sync features may rely on Google Sign-In and Firebase
+                Authentication. If you choose to sign in, you are responsible for maintaining the
+                security of your device and your Google account.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Third-Party Services and Advertising</h2>
+              <p>
+                The App relies on third-party services, including USAJOBS data services, Google
+                Sign-In, Firebase Authentication, Firebase services, Google Maps, Google AdMob, and
+                related consent tools.
+              </p>
+              <p>
+                If advertising is enabled in the version of the App you use, ads may be served by
+                Google AdMob or its partners. We are not responsible for third-party services,
+                websites, ad content, or privacy practices, and your use of those services may be
+                subject to separate terms and policies.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Intellectual Property</h2>
+              <p>
+                The App's design, code, branding, and original content are protected by applicable
+                intellectual property laws. Government job data, agency names, trademarks, and
+                related materials remain the property of their respective owners.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Disclaimer of Warranties</h2>
+              <p>
+                The App is provided on an "as is" and "as available" basis without warranties of
+                any kind, express or implied, including implied warranties of merchantability,
+                fitness for a particular purpose, non-infringement, availability, or accuracy.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Limitation of Liability</h2>
+              <p>
+                To the fullest extent permitted by law, we are not liable for any indirect,
+                incidental, special, consequential, exemplary, or punitive damages, or for any loss
+                of data, profits, opportunities, or employment prospects arising out of or related
+                to your use of the App.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Changes and Contact</h2>
+              <p>
+                We may revise these Terms from time to time. When we do, we will update the
+                effective date shown above. By continuing to use the App after updated Terms take
+                effect, you agree to the revised Terms.
+              </p>
+              <p>
+                If you have questions about these Terms, contact us at
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+              </p>
+            </section>
+          </div>
+        ) : (
+          <div class="legal-content">
+            <section class="legal-block" data-reveal>
+              <h2>Agreement</h2>
+              <p>
+                Please read these Terms of Use carefully before using the ISS Tracker mobile
+                application (the "Service"). Your access to and use of the Service is conditioned on
+                your acceptance of and compliance with these Terms.
+              </p>
+              <p>
+                By accessing or using the Service, you agree to be bound by these Terms. If you
+                disagree with any part of the Terms, you may not access the Service.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Use License</h2>
+              <p>
+                Permission is granted to temporarily download one copy of {app.name} per device for
+                personal, non-commercial use. This is the grant of a license, not a transfer of
+                title.
+              </p>
+              <p>Under this license, you may not:</p>
+              <ul>
+                <li>Modify or copy the materials except as permitted by app functionality.</li>
+                <li>Use the materials for a commercial public display.</li>
+                <li>Attempt to decompile or reverse engineer the Service except where permitted by law.</li>
+                <li>Remove copyright or proprietary notices from the materials.</li>
+                <li>Transfer the materials to another person or mirror the materials on another server.</li>
+              </ul>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Informational Data</h2>
+              {
+                isGsaPerDiem ? (
+                  <p>
+                    The data provided by the Service, including per diem rates for lodging, meals,
+                    and incidental expenses, is sourced from the U.S. General Services
+                    Administration. This information is for informational purposes only.
+                  </p>
+                ) : (
+                  <p>
+                    The data provided by the Service, including the location of the International
+                    Space Station, fly-over predictions, sky path information, maps, astronaut
+                    information, and related details, is sourced from third-party APIs or device
+                    services and is for informational purposes only.
+                  </p>
+                )
+              }
+              <p>
+                We do not guarantee the accuracy, timeliness, visibility, or completeness of this
+                information and are not liable for errors, omissions, or actions taken in reliance
+                on it. {isGsaPerDiem && 'Always verify current rates through the official GSA website.'}
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Third-Party Services and Advertisements</h2>
+              <p>
+                The Service uses {isGsaPerDiem ? 'GSA data services' : 'third-party APIs, Google Maps, Google Play services, Firebase Analytics'}, Google AdMob, and Google User Messaging Platform.
+                We have no control over and assume no responsibility for third-party services,
+                websites, ad content, privacy policies, or practices.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>No Affiliation</h2>
+              {
+                isGsaPerDiem ? (
+                  <p>
+                    US Per Diem is not affiliated with, endorsed by, or operated by the U.S.
+                    General Services Administration or any government agency.
+                  </p>
+                ) : (
+                  <p>
+                    ISS Tracker is not affiliated with, endorsed by, or operated by NASA, the
+                    International Space Station program, or any space agency unless expressly stated.
+                  </p>
+                )
+              }
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Disclaimer</h2>
+              <p>
+                The Service and materials within are provided on an "as is" and "as available"
+                basis. We make no warranties, expressed or implied, and disclaim warranties of
+                merchantability, fitness for a particular purpose, non-infringement, accuracy, and
+                availability.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Limitation of Liability</h2>
+              <p>
+                In no event shall we or our suppliers be liable for any damages, including loss of
+                data, profit, business interruption, missed viewing opportunities, or similar
+                damages arising out of the use or inability to use the Service.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Changes to These Terms</h2>
+              <p>
+                We reserve the right, at our sole discretion, to modify or replace these Terms at
+                any time. By continuing to access or use the Service after revisions become
+                effective, you agree to be bound by the revised Terms.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Governing Law</h2>
+              <p>
+                These Terms are governed by and construed in accordance with the laws of Washington,
+                U.S., without regard to conflict of law provisions.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Contact</h2>
+              <p>
+                If you have questions about these Terms, contact us at
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+              </p>
+            </section>
+          </div>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

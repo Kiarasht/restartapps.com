@@ -7,6 +7,7 @@ export type AppProject = {
   icon: string;
   screenshots: string[];
   status: string;
+  downloads: string;
   platforms: string[];
   highlights: string[];
   detailHighlights: string[];
@@ -17,6 +18,35 @@ export type AppProject = {
 };
 
 export const apps: AppProject[] = [
+  {
+    slug: 'gsa-per-diem',
+    name: 'US Per Diem',
+    eyebrow: 'Travel rate lookup',
+    shortDescription: 'Look up GSA per diem rates, review lodging and M&IE, and generate travel expense reports.',
+    description:
+      'US Per Diem helps travelers look up GSA lodging and meals and incidental expense rates by fiscal year, state, city, county, or ZIP code, then generate per diem expense reports for trips.',
+    icon: '/assets/gsa-per-diem/icon.png',
+    screenshots: [
+      '/assets/gsa-per-diem/screenshot-1.png',
+      '/assets/gsa-per-diem/screenshot-2.png',
+      '/assets/gsa-per-diem/screenshot-3.png'
+    ],
+    status: 'Available on Android',
+    downloads: '1K+',
+    platforms: ['Android', 'Google Play'],
+    highlights: ['GSA rates', 'Trip reports', 'M&IE breakdowns', 'Favorites'],
+    detailHighlights: [
+      'Look up GSA per diem rates by fiscal year, state, city, county, or ZIP code.',
+      'Review lodging rates, meals and incidental expenses, and first and last day calculations.',
+      'Generate per diem expense reports for travel dates using current GSA rate data.'
+    ],
+    links: [
+      {
+        label: 'Google Play',
+        href: 'https://play.google.com/store/apps/details?id=com.restart.gsaperdiem'
+      }
+    ]
+  },
   {
     slug: 'usajobs',
     name: 'USAJobs',
@@ -31,6 +61,7 @@ export const apps: AppProject[] = [
       '/assets/usajobs/screenshot-3.png'
     ],
     status: 'Available on Android',
+    downloads: '100+',
     platforms: ['Android', 'Google Play', 'Galaxy Store'],
     highlights: ['Advanced filters', 'Job alerts', 'Saved jobs', 'Cloud sync'],
     detailHighlights: [
@@ -59,6 +90,7 @@ export const apps: AppProject[] = [
       '/assets/iss-tracker/screenshot-3.png'
     ],
     status: 'Available on Android',
+    downloads: '10K+',
     platforms: ['Android', 'Google Play'],
     highlights: ['Live tracking', 'Visible passes', 'Location aware', 'Space details'],
     detailHighlights: [
