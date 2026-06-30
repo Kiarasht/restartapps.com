@@ -12,7 +12,7 @@ export function getStaticPaths() {
 const app = Astro.props.app;
 const isUsaJobs = app.slug === 'usajobs';
 const isGsaPerDiem = app.slug === 'gsa-per-diem';
-const effectiveDate = isUsaJobs ? 'May 8, 2026' : isGsaPerDiem ? 'August 29, 2025' : 'August 28, 2025';
+const effectiveDate = isUsaJobs || isGsaPerDiem ? 'June 30, 2026' : 'August 28, 2025';
 const contactEmail = 'restartapplication@gmail.com';
 const googlePrivacyUrl = 'https://policies.google.com/privacy';
 const officialUsaJobsUrl = 'https://www.usajobs.gov/';
@@ -152,7 +152,7 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
                 <li>USAJOBS data services, which provide the federal job information displayed in the App.</li>
                 <li>Google Sign-In and Firebase Authentication, if you choose to sign in.</li>
                 <li>Cloud Firestore, Firebase Analytics, and Firebase Crashlytics.</li>
-                <li>Google Maps, Google Play services, and device location services.</li>
+                <li>Mapping, platform, and device location services.</li>
                 <li>Google AdMob and related Google advertising or consent tools, if ads are enabled.</li>
               </ul>
             </section>
@@ -203,7 +203,7 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
             <section class="legal-block" data-reveal>
               <h2>Security</h2>
               <p>
-                We use commercially reasonable measures provided by the Android platform and the
+                We use commercially reasonable measures provided by mobile operating systems and the
                 third-party services we rely on. However, no method of transmission over the
                 Internet or electronic storage is completely secure, and we cannot guarantee
                 absolute security.
@@ -347,7 +347,13 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
                 {!isGsaPerDiem && <li>Firebase Analytics.</li>}
                 <li>Google AdMob and Google User Messaging Platform.</li>
                 <li>{isGsaPerDiem ? 'GSA data services for per diem rate information.' : 'Third-party APIs for ISS location, pass prediction, astronaut, and related space information.'}</li>
-                <li>AndroidX, Jetpack Compose, Retrofit, OkHttp, Hilt, Coil, Glide, and related app libraries.</li>
+                <li>
+                  {
+                    isGsaPerDiem
+                      ? 'Native iOS and Android app frameworks, networking, export, and related app libraries.'
+                      : 'AndroidX, Jetpack Compose, Retrofit, OkHttp, Hilt, Coil, Glide, and related app libraries.'
+                  }
+                </li>
               </ul>
             </section>
 

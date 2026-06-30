@@ -31,9 +31,9 @@ export const apps: AppProject[] = [
       '/assets/gsa-per-diem/screenshot-2-v2.png',
       '/assets/gsa-per-diem/screenshot-3-v2.png'
     ],
-    status: 'Available on Android',
+    status: 'Available on iOS and Android',
     downloads: '1K+',
-    platforms: ['Android', 'Google Play'],
+    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['GSA rates', 'Trip reports', 'M&IE breakdowns', 'Favorites'],
     detailHighlights: [
       'Look up GSA per diem rates by fiscal year, state, city, county, or ZIP code.',
@@ -41,6 +41,10 @@ export const apps: AppProject[] = [
       'Generate per diem expense reports for travel dates using current GSA rate data.'
     ],
     links: [
+      {
+        label: 'App Store',
+        href: 'https://apps.apple.com/us/app/gsa-per-diem/id6779188397'
+      },
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.gsaperdiem'
@@ -60,9 +64,9 @@ export const apps: AppProject[] = [
       '/assets/usajobs/screenshot-2.png',
       '/assets/usajobs/screenshot-3.png'
     ],
-    status: 'Available on Android',
-    downloads: '100+',
-    platforms: ['Android', 'Google Play', 'Galaxy Store'],
+    status: 'Available on iOS and Android',
+    downloads: '1K+',
+    platforms: ['iOS', 'Android', 'App Store', 'Google Play', 'Galaxy Store'],
     highlights: ['Advanced filters', 'Job alerts', 'Saved jobs', 'Cloud sync'],
     detailHighlights: [
       'Build precise federal job searches with location, agency, schedule, pay, remote, and hiring path filters.',
@@ -70,6 +74,10 @@ export const apps: AppProject[] = [
       'Get alert notifications with the newest matching jobs ready to review.'
     ],
     links: [
+      {
+        label: 'App Store',
+        href: 'https://apps.apple.com/us/app/usajobs-federal-job-tracker/id6771679907'
+      },
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.usajobs'

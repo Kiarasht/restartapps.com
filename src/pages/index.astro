@@ -16,12 +16,22 @@ const homepageApps = [...apps].sort((firstApp, secondApp) => {
   return getDownloadValue(secondApp.downloads) - getDownloadValue(firstApp.downloads);
 });
 
+const formatDownloadValue = (downloads: number) => {
+  if (downloads >= 1_000_000) return `${Math.floor(downloads / 1_000_000)}M+`;
+  if (downloads >= 1_000) return `${Math.floor(downloads / 1_000)}K+`;
+  return `${downloads}+`;
+};
+
+const totalDownloads = formatDownloadValue(
+  homepageApps.reduce((total, app) => total + getDownloadValue(app.downloads), 0)
+);
+
 const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boolean);
 ---
 
 <BaseLayout
   title="Restart Apps | Practical mobile apps"
-  description="Restart Apps builds practical Android apps for job search, space tracking, and everyday tools."
+  description="Restart Apps builds practical mobile apps for job search, space tracking, travel, and everyday tools."
 >
   <main class="main">
     <section class="hero">
@@ -34,12 +44,12 @@ const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boole
         </p>
         <div class="hero-metrics" data-reveal>
           <div class="metric">
-            <strong>10K+</strong>
+            <strong>{totalDownloads}</strong>
             <span>Total downloads</span>
           </div>
           <div class="metric">
             <strong>{homepageApps.length}</strong>
-            <span>Android apps</span>
+            <span>Mobile apps</span>
           </div>
         </div>
         <div class="hero-actions" data-reveal>
@@ -79,7 +89,7 @@ const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boole
                 <p class="eyebrow">{app.eyebrow}</p>
                 <h3>{app.name}</h3>
                 <p>{app.shortDescription}</p>
-                <div class="app-stat" aria-label={`${app.name} public Google Play downloads`}>
+                <div class="app-stat" aria-label={`${app.name} public store downloads`}>
                   <strong>{app.downloads}</strong>
                   <span>Downloads</span>
                 </div>
