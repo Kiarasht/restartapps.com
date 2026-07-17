@@ -19,6 +19,30 @@ export type AppProject = {
 
 export const apps: AppProject[] = [
   {
+    slug: 'nyc-government-jobs',
+    name: 'NYC Government Job Tracker',
+    eyebrow: 'NYC job search',
+    shortDescription: 'Search, save, filter, and track New York City government job opportunities.',
+    description:
+      'NYC Government Job Tracker helps job seekers explore New York City government openings with focused filters, saved jobs, hiring insights, alerts, reminders, and optional cloud sync.',
+    icon: '/assets/nyc-government-jobs/icon.png',
+    screenshots: [
+      '/assets/nyc-government-jobs/screenshot-1.png',
+      '/assets/nyc-government-jobs/screenshot-2.png',
+      '/assets/nyc-government-jobs/screenshot-3.png'
+    ],
+    status: 'Preparing for launch on iOS and Android',
+    downloads: '0',
+    platforms: ['iOS', 'Android', 'Coming soon'],
+    highlights: ['Focused filters', 'Job alerts', 'Saved jobs', 'Hiring insights'],
+    detailHighlights: [
+      'Search NYC government openings by keyword, agency, location, career level, salary, posting date, and more.',
+      'Save jobs and searches, create alerts, and set reminders for opportunities that are closing soon.',
+      'Explore hiring trends and work locations using current NYC Open Data.'
+    ],
+    links: []
+  },
+  {
     slug: 'gsa-per-diem',
     name: 'US Per Diem',
     eyebrow: 'Travel rate lookup',

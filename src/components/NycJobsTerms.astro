@@ -1,0 +1,135 @@
+---
+const { contactEmail } = Astro.props;
+const cityJobsUrl = 'https://cityjobs.nyc.gov/jobs';
+---
+
+<div class="legal-content">
+  <section class="legal-block" data-reveal>
+    <h2>Agreement</h2>
+    <p>
+      These Terms of Use govern your access to and use of the NYC Government Job Tracker mobile
+      application, also displayed in parts of the App as NYC Jobs (the "App" or "Service"),
+      provided by Restart Apps. By downloading, accessing, or using the App, you agree to these
+      Terms.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Purpose and Independent Status</h2>
+    <p>
+      The App helps users browse New York City government job listings, save jobs and searches,
+      create local alerts and reminders, review hiring insights, and access official application
+      pages. Posting data is retrieved from NYC Open Data.
+    </p>
+    <p>
+      The App is independent and is not an official City of New York application. It is not
+      affiliated with, endorsed by, sponsored by, or operated by the City of New York or any City
+      agency.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Acceptable Use</h2>
+    <p>
+      You may use the App only for lawful purposes and in compliance with applicable laws and
+      platform rules. You agree not to misuse or disrupt the App, attempt unauthorized access,
+      introduce harmful code, or reverse engineer it except where applicable law permits.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Job Information and Applications</h2>
+    <p>
+      Listings, salaries, requirements, deadlines, agency information, locations, hiring insights,
+      and other employment information are provided for convenience and informational purposes.
+      We do not guarantee that any information is complete, current, accurate, or still available.
+    </p>
+    <p>
+      You are responsible for verifying every listing, deadline, qualification, and application
+      requirement through <a href={cityJobsUrl}>official CityJobs</a> before relying on it or
+      applying. Restart Apps is not an employer, recruiter, or party to any application or hiring
+      decision and does not guarantee interviews or employment.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Alerts, Reminders, and Saved Content</h2>
+    <p>
+      Alerts, notifications, reminders, saved jobs, and synced content are convenience features.
+      We do not guarantee timely or successful delivery, inclusion of every matching opening, or
+      permanent availability of saved or synced content. Monitor official sources for deadlines
+      and changes.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Accounts</h2>
+    <p>
+      Optional account features use Google Sign-In or Sign in with Apple with Firebase
+      Authentication. You are responsible for the security of your device and sign-in account. You
+      may delete your App account from Settings or follow the
+      <a href="/apps/nyc-government-jobs/delete-account">account-deletion instructions</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>NYCJobs Pro and In-App Purchases</h2>
+    <p>
+      The App may offer NYCJobs Pro as a one-time, non-subscription in-app purchase. The features,
+      limits, and price shown on the purchase screen apply at the time of purchase. Purchases and
+      restorations are processed by Google Play or Apple's App Store and remain subject to the
+      applicable store account, payment, refund, and platform terms.
+    </p>
+    <p>
+      Restart Apps does not directly process payment-card information or control app-store refund
+      decisions. You are responsible for using the correct store account. Deleting your App account
+      does not automatically refund or erase a purchase maintained by an app store.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Third-Party Services and Advertising</h2>
+    <p>
+      The App relies on third-party services including NYC Open Data, official CityJobs pages,
+      Google and Apple sign-in services, Firebase, maps and location services, Google Play Billing,
+      Apple StoreKit, Google AdMob, and consent tools. Third-party services, websites, ads, and
+      stores are governed by their own terms and policies, and we are not responsible for their
+      content, availability, security, or practices.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Intellectual Property</h2>
+    <p>
+      The App's design, code, branding, and original materials are owned by Restart Apps or used
+      with permission and are protected by applicable law. Government data, agency names,
+      trademarks, and third-party materials remain the property of their respective owners.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Disclaimers and Limitation of Liability</h2>
+    <p>
+      The App is provided on an "as is" and "as available" basis without warranties of any kind,
+      express or implied, including warranties of accuracy, availability, merchantability, fitness
+      for a particular purpose, non-infringement, or uninterrupted operation.
+    </p>
+    <p>
+      To the fullest extent permitted by law, Restart Apps is not liable for indirect, incidental,
+      special, consequential, exemplary, or punitive damages, or for lost data, profits,
+      opportunities, applications, interviews, or employment prospects arising from use of the
+      App. Nothing in these Terms excludes liability that cannot lawfully be excluded.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Changes and Contact</h2>
+    <p>
+      We may revise these Terms and will update the effective date when changes take effect. Your
+      continued use of the App after that date means you accept the revised Terms.
+    </p>
+    <p>
+      Questions may be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+    </p>
+  </section>
+</div>

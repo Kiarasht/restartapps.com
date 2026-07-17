@@ -26,7 +26,7 @@ const totalDownloads = formatDownloadValue(
   homepageApps.reduce((total, app) => total + getDownloadValue(app.downloads), 0)
 );
 
-const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boolean);
+const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boolean).slice(0, 3);
 ---
 
 <BaseLayout
@@ -89,10 +89,19 @@ const featuredShots = homepageApps.map((app) => app.screenshots[0]).filter(Boole
                 <p class="eyebrow">{app.eyebrow}</p>
                 <h3>{app.name}</h3>
                 <p>{app.shortDescription}</p>
-                <div class="app-stat" aria-label={`${app.name} public store downloads`}>
-                  <strong>{app.downloads}</strong>
-                  <span>Downloads</span>
-                </div>
+                {
+                  app.downloads === '0' ? (
+                    <div class="app-stat" aria-label={`${app.name} launch status`}>
+                      <strong>Coming soon</strong>
+                      <span>Store launch</span>
+                    </div>
+                  ) : (
+                    <div class="app-stat" aria-label={`${app.name} public store downloads`}>
+                      <strong>{app.downloads}</strong>
+                      <span>Downloads</span>
+                    </div>
+                  )
+                }
                 <div class="pill-row" aria-label={`${app.name} features`}>
                   {app.highlights.map((highlight) => (
                     <span class="pill">{highlight}</span>

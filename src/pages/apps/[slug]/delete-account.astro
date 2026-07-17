@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAppBySlug } from '../../../data/apps';
+
+export function getStaticPaths() {
+  const app = getAppBySlug('nyc-government-jobs');
+  return app
+    ? [
+        {
+          params: { slug: app.slug },
+          props: { app }
+        }
+      ]
+    : [];
+}
+
+const app = Astro.props.app;
+const contactEmail = 'restartapplication@gmail.com';
+const deletionEmail = `mailto:${contactEmail}?subject=NYC%20Government%20Job%20Tracker%20account%20deletion%20request`;
+---
+
+<BaseLayout
+  title={`Delete your ${app.name} account | Restart Apps`}
+  description={`Instructions for deleting your ${app.name} account and associated synced data.`}
+>
+  <main class="main">
+    <section class="section legal-page">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow">{app.name}</p>
+        <h1>Account deletion</h1>
+        <p class="legal-updated">Last updated: July 17, 2026</p>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-block" data-reveal>
+          <h2>Delete your account in the App</h2>
+          <ol>
+            <li>Open NYC Government Job Tracker and go to <b>Settings</b>.</li>
+            <li>Open the account section and choose <b>Delete Account</b>.</li>
+            <li>Confirm the request and complete sign-in verification if prompted.</li>
+          </ol>
+          <p>
+            This removes your Firebase Authentication account and synced App data, including synced
+            saved jobs, saved searches, job alerts, alert preferences, reminders, and related App
+            settings. Local App data is also cleared as part of the in-app flow.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Request deletion by email</h2>
+          <p>
+            If you cannot access the App, send a request from the email address associated with your
+            account. Include the App name and state that you want the account and associated synced
+            App data deleted. We may need to verify that you control the account before completing
+            the request.
+          </p>
+          <p><a class="button primary" href={deletionEmail}>Email an account-deletion request</a></p>
+          <p>
+            You may also email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> directly.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>What may remain</h2>
+          <p>
+            Deleting your App account does not erase purchase records maintained by Google Play or
+            Apple, create a refund, or remove analytics, advertising, diagnostic, or security
+            records that are retained under third-party provider policies or applicable legal and
+            operational requirements. Data that is no longer linked to your account may be retained
+            in aggregated or de-identified form.
+          </p>
+          <p>
+            Review the <a href={`/apps/${app.slug}/privacy`}>Privacy Policy</a> for additional
+            details.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

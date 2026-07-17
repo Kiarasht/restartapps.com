@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import NycJobsPrivacy from '../../../components/NycJobsPrivacy.astro';
 import { apps } from '../../../data/apps';
 
 export function getStaticPaths() {
@@ -10,9 +11,14 @@ export function getStaticPaths() {
 }
 
 const app = Astro.props.app;
+const isNycJobs = app.slug === 'nyc-government-jobs';
 const isUsaJobs = app.slug === 'usajobs';
 const isGsaPerDiem = app.slug === 'gsa-per-diem';
-const effectiveDate = isUsaJobs || isGsaPerDiem ? 'June 30, 2026' : 'August 28, 2025';
+const effectiveDate = isNycJobs
+  ? 'July 17, 2026'
+  : isUsaJobs || isGsaPerDiem
+    ? 'June 30, 2026'
+    : 'August 28, 2025';
 const contactEmail = 'restartapplication@gmail.com';
 const googlePrivacyUrl = 'https://policies.google.com/privacy';
 const officialUsaJobsUrl = 'https://www.usajobs.gov/';
@@ -28,7 +34,9 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
       </div>
 
       {
-        isUsaJobs ? (
+        isNycJobs ? (
+          <NycJobsPrivacy contactEmail={contactEmail} />
+        ) : isUsaJobs ? (
           <div class="legal-content">
             <section class="legal-block" data-reveal>
               <h2>Overview</h2>

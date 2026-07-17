@@ -29,8 +29,8 @@ const app = Astro.props.app;
         </div>
         <div class="hero-metrics detail-metrics" data-reveal>
           <div class="metric">
-            <strong>{app.downloads}</strong>
-            <span>Downloads</span>
+            <strong>{app.downloads === '0' ? 'Coming soon' : app.downloads}</strong>
+            <span>{app.downloads === '0' ? 'Store launch' : 'Downloads'}</span>
           </div>
         </div>
         <div class="hero-actions" data-reveal>
@@ -72,6 +72,9 @@ const app = Astro.props.app;
       <div class="legal-link-row" data-reveal>
         <a class="button secondary" href={`/apps/${app.slug}/privacy`}>Privacy Policy</a>
         <a class="button secondary" href={`/apps/${app.slug}/terms`}>Terms of Use</a>
+        {app.slug === 'nyc-government-jobs' && (
+          <a class="button secondary" href={`/apps/${app.slug}/delete-account`}>Account Deletion</a>
+        )}
       </div>
     </section>
   </main>
