@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import GsaAuctionTerms from '../../../components/GsaAuctionTerms.astro';
 import NycJobsTerms from '../../../components/NycJobsTerms.astro';
 import { apps } from '../../../data/apps';
 
@@ -11,10 +12,13 @@ export function getStaticPaths() {
 }
 
 const app = Astro.props.app;
+const isGsaAuctionFinder = app.slug === 'gsa-auction-finder';
 const isNycJobs = app.slug === 'nyc-government-jobs';
 const isUsaJobs = app.slug === 'usajobs';
 const isGsaPerDiem = app.slug === 'gsa-per-diem';
-const effectiveDate = isNycJobs
+const effectiveDate = isGsaAuctionFinder
+  ? 'September 20, 2026'
+  : isNycJobs
   ? 'July 17, 2026'
   : isUsaJobs
     ? 'May 8, 2026'
@@ -35,7 +39,9 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
       </div>
 
       {
-        isNycJobs ? (
+        isGsaAuctionFinder ? (
+          <GsaAuctionTerms contactEmail={contactEmail} />
+        ) : isNycJobs ? (
           <NycJobsTerms contactEmail={contactEmail} />
         ) : isUsaJobs ? (
           <div class="legal-content">

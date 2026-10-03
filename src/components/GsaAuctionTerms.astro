@@ -1,0 +1,182 @@
+---
+const { contactEmail } = Astro.props;
+const officialGsaAuctionsUrl = 'https://www.gsaauctions.gov/';
+const lottieLicenseUrl = 'https://lottiefiles.com/page/license';
+---
+
+<div class="legal-content">
+  <section class="legal-block" data-reveal>
+    <h2>Agreement</h2>
+    <p>
+      These Terms of Use govern your access to and use of GSA Auction Finder (the
+      "App" or "Service"). By downloading, accessing, or using the App, you agree
+      to these Terms.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Purpose and Independent Status</h2>
+    <p>
+      The App helps users discover public GSA Auctions listings, search and filter
+      auction information, save listings and searches, keep personal notes, compare
+      listings, create reminders, and open official listing pages.
+    </p>
+    <p>
+      The App is an independent auction-discovery tool. It is not affiliated with,
+      endorsed by, sponsored by, or operated by the U.S. General Services
+      Administration or the United States Government.
+    </p>
+    <p>
+      The App does not place bids, accept payments for auction property, sell
+      property, guarantee purchases, arrange inspections, arrange shipping, or
+      arrange pickup. Bid, Buy, and similar actions open official GSA Auctions
+      pages or other external services.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Official Transactions and Verification</h2>
+    <p>
+      Auction information in the App is provided for convenience and informational
+      purposes only. You are responsible for verifying listing details, sale
+      method, eligibility, property condition, reserve information, deposits, fees,
+      deadlines, payment rules, inspection requirements, removal requirements, and
+      pickup details through the official listing before bidding, buying, traveling,
+      or relying on the information.
+    </p>
+    <p>
+      Official auction information is available through
+      <a href={officialGsaAuctionsUrl}>GSA Auctions</a>. If there is any conflict
+      between the App and an official listing, the official listing controls.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Auction Data, Photos, and Availability</h2>
+    <p>
+      Listings, prices, bidder counts, bid history, countdowns, documents, photos,
+      contact fields, and auction status may be delayed, incomplete, inaccurate,
+      unavailable, changed, removed, or cached. Offline or cached content can be
+      stale. We do not guarantee that every listing, image, document, price, alert,
+      or status shown in the App is current, complete, or available.
+    </p>
+    <p>
+      Official listing links, agency pages, photos, documents, maps, phone links,
+      email links, calendar tools, browser pages, and sharing tools may open or
+      depend on third-party or platform services outside our control.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Maps, ZIP Distances, and Calendar Reminders</h2>
+    <p>
+      ZIP-area distances, map pins, directions, and location estimates are
+      approximate. They are not confirmed coordinates, routes, access instructions,
+      pickup instructions, or travel advice. Always verify property location,
+      inspection, pickup, removal, and access requirements through official sources.
+    </p>
+    <p>
+      Calendar reminders are convenience tools. Events you create may not update
+      automatically when a listing changes and may remain in your calendar after
+      you remove a listing or uninstall the App.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Alerts, Saved Content, and Local Data</h2>
+    <p>
+      Alerts and notifications are best effort. They may be delayed, missed,
+      duplicated, incomplete, or affected by device settings, platform limits,
+      background refresh, network availability, app state, and data-source changes.
+      You remain responsible for monitoring official listing pages and deadlines.
+    </p>
+    <p>
+      Saved listings, saved searches, ZIP locations, personal notes, comparison
+      state, alert history, and related records are stored on your device. The App
+      does not currently provide app-managed cloud sync or recovery for that data.
+      You are responsible for maintaining any records you need.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Free Features and Pro Subscriptions</h2>
+    <p>
+      Browsing, searching, filtering, saved listings, saved searches, saved ZIP
+      locations, comparisons, calendar reminders, and one active saved-search alert
+      are available without Pro. Pro expands saved-search alerts, enables
+      saved-listing change and ending alerts, and removes ads while your
+      subscription is active.
+    </p>
+    <p>
+      Free alert capacity and Pro alert capacity may differ by platform or release.
+      If Pro expires, extra alerts may pause while saved records remain on your
+      device. Stored listing and search counts are not subscription-limited.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Subscription Billing, Cancellation, and Restoration</h2>
+    <p>
+      Subscriptions are billed by the Apple App Store or Google Play, depending on
+      where you subscribed. Prices, renewal timing, taxes, trials, cancellation
+      rules, refund handling, and payment processing are managed by the applicable
+      store and your store account.
+    </p>
+    <p>
+      You can manage or cancel subscriptions through the store account that handled
+      the purchase. Uninstalling the App does not cancel a subscription. Restore
+      purchases uses the same platform account. Purchases do not transfer between
+      Apple and Google store accounts.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Acceptable Use and Intellectual Property</h2>
+    <p>
+      You may use the App only for lawful purposes and in compliance with
+      applicable laws, auction rules, platform rules, and these Terms. You agree not
+      to misuse the App, interfere with normal operation, attempt unauthorized
+      access, scrape in a way that burdens services, or use the App to violate
+      official auction terms.
+    </p>
+    <p>
+      The App's design, code, branding, and original content are protected by
+      applicable intellectual property laws. Government data, agency names,
+      trademarks, auction listings, photos, and documents remain the property of
+      their respective owners. Animation assets may be subject to the
+      <a href={lottieLicenseUrl}>LottieFiles license</a> or other third-party
+      licenses where used.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Disclaimers and Limitation of Liability</h2>
+    <p>
+      The App is provided on an "as is" and "as available" basis without warranties
+      of any kind, express or implied, including warranties of merchantability,
+      fitness for a particular purpose, non-infringement, availability, accuracy,
+      completeness, and uninterrupted operation.
+    </p>
+    <p>
+      To the fullest extent permitted by law, we are not liable for indirect,
+      incidental, special, consequential, exemplary, or punitive damages, or for
+      lost profits, lost opportunities, missed bids, missed deadlines, travel costs,
+      pickup costs, inspection costs, removal costs, data loss, or reliance on
+      auction information shown in the App.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Changes and Contact</h2>
+    <p>
+      We may revise these Terms as features, platform requirements, or legal needs
+      change. When we do, we will update the effective date shown above. Continued
+      use of the App after updated Terms take effect means you accept the revised
+      Terms.
+    </p>
+    <p>
+      If you have questions about these Terms, contact us at
+      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+    </p>
+  </section>
+</div>

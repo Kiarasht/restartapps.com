@@ -43,6 +43,30 @@ export const apps: AppProject[] = [
     links: []
   },
   {
+    slug: 'gsa-auction-finder',
+    name: 'GSA Auction Finder',
+    eyebrow: 'Federal auction discovery',
+    shortDescription: 'Search, save, compare, and monitor public GSA auction listings.',
+    description:
+      'GSA Auction Finder helps buyers discover public GSA Auctions listings, search and filter by category, state, bid, deadline, agency, and nearby ZIP area, then save listings, compare options, and open the official listing to bid or buy.',
+    icon: '/assets/gsa-auction-finder/icon.png',
+    screenshots: [
+      '/assets/gsa-auction-finder/screenshot-1.png',
+      '/assets/gsa-auction-finder/screenshot-2.png',
+      '/assets/gsa-auction-finder/screenshot-3.png'
+    ],
+    status: 'Preparing for launch on iOS and Android',
+    downloads: '0',
+    platforms: ['iOS', 'Android', 'Coming soon'],
+    highlights: ['Auction search', 'Saved listings', 'Comparisons', 'Alerts'],
+    detailHighlights: [
+      'Search public GSA Auctions listings with filters for category, state, status, bid range, ending window, bidders, agency, reserve details, and ZIP-area distance.',
+      'Save listings, personal notes, searches, and ZIP locations locally, then compare auction details side by side.',
+      'Use best-effort daily alerts, notification health, official listing links, and Pro options for more alerts and an ad-free experience.'
+    ],
+    links: []
+  },
+  {
     slug: 'gsa-per-diem',
     name: 'US Per Diem',
     eyebrow: 'Travel rate lookup',

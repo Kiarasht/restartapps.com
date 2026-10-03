@@ -1,0 +1,233 @@
+---
+const { contactEmail } = Astro.props;
+const googlePrivacyUrl = 'https://policies.google.com/privacy';
+const firebasePrivacyUrl = 'https://firebase.google.com/support/privacy';
+const applePrivacyUrl = 'https://www.apple.com/legal/privacy/';
+const gsaPoliciesUrl = 'https://www.gsa.gov/website-information/website-policies';
+const officialGsaAuctionsUrl = 'https://www.gsaauctions.gov/';
+---
+
+<div class="legal-content">
+  <section class="legal-block" data-reveal>
+    <h2>Overview</h2>
+    <p>
+      This Privacy Policy explains how Restart Apps ("we", "us", or "our") handles
+      information when you use GSA Auction Finder (the "App" or "Service").
+    </p>
+    <p>
+      The App is an independent auction-discovery tool. It is not affiliated with,
+      endorsed by, or operated by the U.S. General Services Administration or the
+      United States Government.
+    </p>
+    <p>
+      The App helps users discover public GSA Auctions listings, search and filter
+      downloaded listings, save listings and searches, compare listings, save ZIP
+      locations, receive best-effort alerts, and open official listings for bidding
+      or buying.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Listings, Searches, and Network Requests</h2>
+    <p>
+      The App retrieves public auction listings from GSA's API and obtains photos,
+      descriptions, bidding information, documents, and other listing details from
+      GSA website services and hosting providers, including Amazon S3. These
+      providers receive normal network information such as IP address and requests
+      identifying the listings or files you open.
+    </p>
+    <p>
+      Search and filter matching use downloaded listings on your device. We do not
+      operate a backend that receives your saved searches, personal notes, watchlist,
+      saved ZIP locations, or comparison selections.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Information Stored on Your Device</h2>
+    <p>
+      The App stores saved listings, personal notes, saved searches, saved ZIP
+      locations, filters, notification preferences, alert history and baselines,
+      onboarding state, theme settings, recently viewed listings, and cached
+      subscription verification locally on your device.
+    </p>
+    <p>
+      Auction information and images may be cached to improve loading and offline
+      browsing. Recently Viewed keeps up to ten listing snapshots on your device.
+      Comparison selections are temporary browsing state.
+    </p>
+    <p>
+      The App does not currently offer app-managed accounts, sign-in, cloud sync,
+      Firebase Authentication, Cloud Firestore, or Firebase Cloud Messaging.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Location, ZIP Areas, and Maps</h2>
+    <p>
+      If you choose a current-location feature and grant permission, the App uses
+      device location to estimate a nearby supported ZIP-area location. Exact device
+      coordinates remain transient and are not stored by our backend. You can enter
+      and save ZIP codes instead, and you can revoke location permission in system
+      settings.
+    </p>
+    <p>
+      Listing maps use Google Maps on Android and Apple MapKit on iOS. Public
+      property addresses may be sent to platform geocoding services to estimate a
+      listing pin. Map and geocoding providers may process IP address, device
+      information, usage, and diagnostics under their own policies. Map previews do
+      not enable a user-location layer.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Advertising and Privacy Choices</h2>
+    <p>
+      The free version uses Google AdMob for banner, native, and app-open
+      advertisements. Google and its advertising partners may process IP address,
+      approximate location derived from IP, advertising or other app/device
+      identifiers where permitted, device and operating-system details, ad views and
+      interactions, diagnostics, and consent state to deliver and measure ads,
+      prevent fraud, and improve their services.
+    </p>
+    <p>
+      Google User Messaging Platform handles applicable advertising privacy messages
+      and consent choices. Available choices depend on your region, device settings,
+      and the configured consent message. Pro removes advertisements, but it does
+      not disable analytics, crash reporting, listing requests, maps, subscriptions,
+      or store services.
+    </p>
+    <p>
+      The App does not currently request Apple's App Tracking Transparency permission.
+      This does not mean advertising or analytics SDKs process no information.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Analytics and Crash Reporting</h2>
+    <p>
+      The App uses Google Analytics for Firebase and Firebase Crashlytics when
+      Firebase is configured. Usage Analytics and Crash Reports are separate,
+      optional controls in Settings &gt; Data &amp; Privacy and are off by default
+      until you choose to enable them.
+    </p>
+    <p>
+      Analytics can process app-instance identifiers, device and app details, usage
+      and engagement events, and approximate geographic information. Crashlytics can
+      process crash reports, stack traces, installation identifiers, device and
+      operating-system details, and diagnostic information.
+    </p>
+    <p>
+      We do not intentionally include exact device coordinates, API keys, personal
+      notes, raw search text, GSA contact fields, full auction descriptions, or
+      official listing URLs in custom telemetry.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Alerts, Notifications, and Calendar Reminders</h2>
+    <p>
+      Free and Pro alerts are evaluated using downloaded data and local saved-search
+      or saved-listing state. Alert check times, update history, matching baselines,
+      and delivery-health information are stored locally. Android and iOS background
+      services and local notifications are best effort; we do not operate remote
+      push monitoring for this App.
+    </p>
+    <p>
+      Notification text can include listing titles, saved-search names, or detected
+      changes and may appear on your lock screen according to your device settings.
+      You can change notification permission in system settings.
+    </p>
+    <p>
+      Add to Calendar passes a listing title, closing date or time, public property
+      address, and official link to the system calendar editor. You decide whether
+      to save the event. The App does not read your existing calendar events.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Purchases, Reviews, and Support</h2>
+    <p>
+      Apple App Store and Google Play handle subscriptions, billing, refunds, and
+      payment information. The App receives product, transaction, and entitlement
+      information needed to activate or restore Pro, but we do not receive full
+      payment-card details. Store purchase history remains with the applicable
+      store account.
+    </p>
+    <p>
+      Review actions open the appropriate store listing when available. Reviews are
+      handled by the store and may be public under your store profile.
+    </p>
+    <p>
+      If you contact <a href={`mailto:${contactEmail}`}>{contactEmail}</a>, we
+      receive your email address and the message or attachments you choose to send.
+      We use that information to respond to support, billing-routing, legal, or
+      privacy requests.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Third-Party Services</h2>
+    <p>The App relies on services that process data under their own terms and policies, including:</p>
+    <ul>
+      <li>GSA Auctions API, official GSA Auctions pages, and related hosting providers.</li>
+      <li>Google Maps, Apple MapKit, platform geocoding, device location, notifications, calendar, browser, sharing, phone, and email services.</li>
+      <li>Google AdMob and Google User Messaging Platform.</li>
+      <li>Google Analytics for Firebase and Firebase Crashlytics, when enabled.</li>
+      <li>Google Play Billing, Apple StoreKit, and the applicable app store.</li>
+    </ul>
+    <p>
+      Provider information:
+      <a href={gsaPoliciesUrl}>GSA website policies</a>,
+      <a href={googlePrivacyUrl}>Google Privacy Policy</a>,
+      <a href={firebasePrivacyUrl}>Firebase privacy and security</a>, and
+      <a href={applePrivacyUrl}>Apple Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Retention, Deletion, and Your Choices</h2>
+    <p>
+      You can remove saved listings, searches, ZIP locations, and personal notes in
+      the App. Clearing app data where supported or deleting the App removes local
+      app data, although operating-system backups or restores may retain or restore
+      copies. Cached content may be evicted independently of saved records.
+    </p>
+    <p>
+      Deleting local app data does not cancel a subscription, remove calendar events,
+      erase store records or submitted reviews, or immediately delete information
+      already processed by service providers. Manage subscriptions in the applicable
+      store and calendar events in your calendar provider.
+    </p>
+    <p>
+      Depending on your location, you may have rights to request access, correction,
+      deletion, restriction, objection, a copy of personal information, or withdrawal
+      of consent where applicable. Contact
+      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We may need information
+      to verify and locate a request, and we cannot retrieve local-only records from
+      your device.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Official Sources, Children, Security, and Contact</h2>
+    <p>
+      Verify auction details, sale terms, condition, inspection, pickup, payment,
+      and bidding requirements through <a href={officialGsaAuctionsUrl}>official GSA Auctions</a>.
+    </p>
+    <p>
+      The App is not directed to children under 13, and we do not knowingly seek
+      personal information from children under 13.
+    </p>
+    <p>
+      The App uses HTTPS for supported network services and platform storage
+      protections, but no transmission or storage system is completely secure.
+      Providers may process information in the United States or other countries
+      under their applicable safeguards and policies.
+    </p>
+    <p>
+      We may revise this policy as features or practices change. Questions may be
+      sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+    </p>
+  </section>
+</div>
