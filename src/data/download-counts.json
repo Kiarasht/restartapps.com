@@ -1,0 +1,23 @@
+{
+  "gsa-per-diem": {
+    "googlePlayMinimum": 1000,
+    "appStoreDownloads": null,
+    "combinedMinimum": 1000,
+    "display": "1K+",
+    "updatedAt": "2026-10-04"
+  },
+  "usajobs": {
+    "googlePlayMinimum": 5000,
+    "appStoreDownloads": null,
+    "combinedMinimum": 5000,
+    "display": "5K+",
+    "updatedAt": "2026-10-04"
+  },
+  "iss-tracker": {
+    "googlePlayMinimum": 10000,
+    "appStoreDownloads": null,
+    "combinedMinimum": 10000,
+    "display": "10K+",
+    "updatedAt": "2026-10-04"
+  }
+}

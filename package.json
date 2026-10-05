@@ -7,7 +7,9 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
-    "astro": "ASTRO_TELEMETRY_DISABLED=1 astro"
+    "astro": "ASTRO_TELEMETRY_DISABLED=1 astro",
+    "update-downloads": "node scripts/update-downloads.mjs",
+    "test:downloads": "node --test scripts/update-downloads.test.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",

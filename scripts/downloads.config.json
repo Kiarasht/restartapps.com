@@ -1,0 +1,20 @@
+{
+  "apps": [
+    {
+      "slug": "gsa-per-diem",
+      "googlePlayPackage": "com.restart.gsaperdiem",
+      "appleId": "6779188397",
+      "appleReportStartYear": 2026
+    },
+    {
+      "slug": "usajobs",
+      "googlePlayPackage": "com.restart.usajobs",
+      "appleId": "6771679907",
+      "appleReportStartYear": 2026
+    },
+    {
+      "slug": "iss-tracker",
+      "googlePlayPackage": "com.restart.spacestationtracker"
+    }
+  ]
+}

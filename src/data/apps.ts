@@ -1,3 +1,8 @@
+import downloadCounts from './download-counts.json';
+
+const countsBySlug: Record<string, { display: string }> = downloadCounts;
+const getDownloadCount = (slug: string, fallback = '0') => countsBySlug[slug]?.display ?? fallback;
+
 export type AppProject = {
   slug: string;
   name: string;
@@ -80,7 +85,7 @@ export const apps: AppProject[] = [
       '/assets/gsa-per-diem/screenshot-3-v2.png'
     ],
     status: 'Available on iOS and Android',
-    downloads: '1K+',
+    downloads: getDownloadCount('gsa-per-diem', '1K+'),
     platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['GSA rates', 'Trip reports', 'M&IE breakdowns', 'Favorites'],
     detailHighlights: [
@@ -113,7 +118,7 @@ export const apps: AppProject[] = [
       '/assets/usajobs/screenshot-3.png'
     ],
     status: 'Available on iOS and Android',
-    downloads: '1K+',
+    downloads: getDownloadCount('usajobs', '1K+'),
     platforms: ['iOS', 'Android', 'App Store', 'Google Play', 'Galaxy Store'],
     highlights: ['Advanced filters', 'Job alerts', 'Saved jobs', 'Cloud sync'],
     detailHighlights: [
@@ -146,7 +151,7 @@ export const apps: AppProject[] = [
       '/assets/iss-tracker/screenshot-3.png'
     ],
     status: 'Available on Android',
-    downloads: '10K+',
+    downloads: getDownloadCount('iss-tracker', '10K+'),
     platforms: ['Android', 'Google Play'],
     highlights: ['Live tracking', 'Visible passes', 'Location aware', 'Space details'],
     detailHighlights: [
