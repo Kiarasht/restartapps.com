@@ -1,182 +1,72 @@
 ---
 const { contactEmail } = Astro.props;
-const officialGsaAuctionsUrl = 'https://www.gsaauctions.gov/';
-const lottieLicenseUrl = 'https://lottiefiles.com/page/license';
 ---
 
 <div class="legal-content">
   <section class="legal-block" data-reveal>
-    <h2>Agreement</h2>
-    <p>
-      These Terms of Use govern your access to and use of GSA Auction Finder (the
-      "App" or "Service"). By downloading, accessing, or using the App, you agree
-      to these Terms.
-    </p>
+    <h2>Overview</h2>
+    <p>These Terms of Use govern GSA Auction Finder. By using the app, you agree to these terms. GSA Auction Finder is an independent tool, not affiliated with, endorsed by, or operated by GSA or the United States Government. Support: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Purpose and Independent Status</h2>
-    <p>
-      The App helps users discover public GSA Auctions listings, search and filter
-      auction information, save listings and searches, keep personal notes, compare
-      listings, create reminders, and open official listing pages.
-    </p>
-    <p>
-      The App is an independent auction-discovery tool. It is not affiliated with,
-      endorsed by, sponsored by, or operated by the U.S. General Services
-      Administration or the United States Government.
-    </p>
-    <p>
-      The App does not place bids, accept payments for auction property, sell
-      property, guarantee purchases, arrange inspections, arrange shipping, or
-      arrange pickup. Bid, Buy, and similar actions open official GSA Auctions
-      pages or other external services.
-    </p>
+    <h2>1. Purpose and official transactions</h2>
+    <p>The app helps you discover federal auctions and purchase listings, save items and notes, compare listings, and set reminders or alerts. It does not place bids, accept payments for property, sell property, guarantee purchases, arrange inspections, provide shipping, or coordinate pickup. Bid, Buy, and similar actions open the official listing; they do not complete a transaction inside this app.</p>
+    <p>You are responsible for verifying the official listing, sale method, eligibility, condition, reserve, deposits, taxes or fees, deadlines, payment requirements, inspection arrangements, and removal obligations before acting. Official sale terms and the relevant agency's requirements govern any transaction.</p>
+    <p><a href="https://www.gsaauctions.gov/">https://www.gsaauctions.gov/</a></p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Official Transactions and Verification</h2>
-    <p>
-      Auction information in the App is provided for convenience and informational
-      purposes only. You are responsible for verifying listing details, sale
-      method, eligibility, property condition, reserve information, deposits, fees,
-      deadlines, payment rules, inspection requirements, removal requirements, and
-      pickup details through the official listing before bidding, buying, traveling,
-      or relying on the information.
-    </p>
-    <p>
-      Official auction information is available through
-      <a href={officialGsaAuctionsUrl}>GSA Auctions</a>. If there is any conflict
-      between the App and an official listing, the official listing controls.
-    </p>
+    <h2>2. Data, photos, and availability</h2>
+    <p>GSA API and website information, images, documents, and bidding services may be delayed, incomplete, unavailable, changed, or removed. Some supplemental website services are undocumented and may stop working without notice. Cached or offline information may be stale, and a listing's appearance in the app does not guarantee it is still available.</p>
+    <p>Displayed prices, bidder counts, bid history, countdowns, status, and refresh indicators are informational. A refresh indicator does not promise continuous real-time data. Auction deadlines may be extended or changed. Local-time displays depend on source data and device time-zone settings; the official listing remains authoritative.</p>
+    <p>Agency descriptions, categories, condition summaries, filter presets, and comparison tables are conveniences, not warranties. Missing or normalized specification fields can make comparisons incomplete. No listing is represented as a guaranteed bargain, investment, or fit for a particular purpose.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Auction Data, Photos, and Availability</h2>
-    <p>
-      Listings, prices, bidder counts, bid history, countdowns, documents, photos,
-      contact fields, and auction status may be delayed, incomplete, inaccurate,
-      unavailable, changed, removed, or cached. Offline or cached content can be
-      stale. We do not guarantee that every listing, image, document, price, alert,
-      or status shown in the App is current, complete, or available.
-    </p>
-    <p>
-      Official listing links, agency pages, photos, documents, maps, phone links,
-      email links, calendar tools, browser pages, and sharing tools may open or
-      depend on third-party or platform services outside our control.
-    </p>
+    <h2>3. Maps, reminders, and external actions</h2>
+    <p>ZIP distances and map pins are estimates, not confirmed property coordinates, routes, inspection access, or pickup arrangements. Verify addresses and arrangements with the listing contact.</p>
+    <p>Calendar reminders are copies you choose to save. They do not automatically update when a listing changes, and remain in your calendar after removing a saved listing or uninstalling the app. You are responsible for editing or deleting them.</p>
+    <p>Links, documents, sharing, phone calls, email, maps, reviews, and advertisements can open third-party services. Their terms and privacy policies apply. We do not endorse an advertiser or guarantee third-party content or availability.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Maps, ZIP Distances, and Calendar Reminders</h2>
-    <p>
-      ZIP-area distances, map pins, directions, and location estimates are
-      approximate. They are not confirmed coordinates, routes, access instructions,
-      pickup instructions, or travel advice. Always verify property location,
-      inspection, pickup, removal, and access requirements through official sources.
-    </p>
-    <p>
-      Calendar reminders are convenience tools. Events you create may not update
-      automatically when a listing changes and may remain in your calendar after
-      you remove a listing or uninstall the App.
-    </p>
+    <h2>4. Alerts and saved content</h2>
+    <p>The free plan includes one active saved-search alert. Pro supports up to ten active saved-search alerts, plus available saved-listing change and ending alerts. Alerts, update history, and background refreshes are best effort. Network access, feed availability, device scheduling, battery settings, and notification permission can delay or prevent delivery. They may miss changes or arrive after a deadline; monitor the official listing yourself.</p>
+    <p>Saved data and personal notes are stored on your device rather than in an app account. We do not provide app-managed cloud synchronization or guarantee recovery after data loss, device changes, or deletion. Operating-system backups may behave differently across devices.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Alerts, Saved Content, and Local Data</h2>
-    <p>
-      Alerts and notifications are best effort. They may be delayed, missed,
-      duplicated, incomplete, or affected by device settings, platform limits,
-      background refresh, network availability, app state, and data-source changes.
-      You remain responsible for monitoring official listing pages and deadlines.
-    </p>
-    <p>
-      Saved listings, saved searches, ZIP locations, personal notes, comparison
-      state, alert history, and related records are stored on your device. The App
-      does not currently provide app-managed cloud sync or recovery for that data.
-      You are responsible for maintaining any records you need.
-    </p>
+    <h2>5. Free features and Pro</h2>
+    <p>Pro provides additional alerts and removes advertisements. Browsing, filters, sorting, saved listings and searches, locations, comparisons, calendar reminders, and one active search alert remain free. Saved listings, searches, and locations have no plan-based record limit. Enabling additional search alerts requires an eligible Pro entitlement.</p>
+    <p>When Pro expires, the oldest enabled search alert continues under the free allowance; additional alerts pause and ads may return. The app does not intentionally delete your saved records. You can pause an active alert to use another. Subscription status may require store verification. Pending purchases do not activate Pro until confirmed, and offline entitlement access may be limited.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Free Features and Pro Subscriptions</h2>
-    <p>
-      Browsing, searching, filtering, saved listings, saved searches, saved ZIP
-      locations, comparisons, calendar reminders, and one active saved-search alert
-      are available without Pro. Pro expands saved-search alerts, enables
-      saved-listing change and ending alerts, and removes ads while your
-      subscription is active.
-    </p>
-    <p>
-      Free alert capacity and Pro alert capacity may differ by platform or release.
-      If Pro expires, extra alerts may pause while saved records remain on your
-      device. Stored listing and search counts are not subscription-limited.
-    </p>
+    <h2>6. Pro purchases, billing, cancellation, and restoration</h2>
+    <p>Monthly and annual subscriptions are purchased through Apple or Google. The store-provided price, billing period, and any offer terms shown at purchase apply. Subscriptions renew automatically unless canceled through the store under its rules. The app does not promise a trial unless one is explicitly offered at checkout.</p>
+    <p>Lifetime Pro is a non-consumable, one-time purchase of Pro access without subscription renewal. It does not include a free trial or cancel an existing monthly or annual subscription; manage that subscription separately to stop recurring charges. A refunded or revoked purchase no longer grants access. Lifetime refers to the Pro license, not a guarantee that the app, government data sources, or third-party services will operate forever or that future separate products are included.</p>
+    <p>Manage or cancel your subscription in the account used to purchase it. Deleting the app or local data does not cancel billing. Access normally continues through the paid period after cancellation, subject to store rules. Refund requests and billing disputes are handled by the applicable store and applicable law; these terms do not remove statutory refund or consumer rights.</p>
+    <p>Restore Purchases checks the same platform store account for eligible subscriptions and Lifetime Pro. App sign-in is not required and does not transfer purchases between Apple and Google platforms. We do not collect your full payment-card information.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Subscription Billing, Cancellation, and Restoration</h2>
-    <p>
-      Subscriptions are billed by the Apple App Store or Google Play, depending on
-      where you subscribed. Prices, renewal timing, taxes, trials, cancellation
-      rules, refund handling, and payment processing are managed by the applicable
-      store and your store account.
-    </p>
-    <p>
-      You can manage or cancel subscriptions through the store account that handled
-      the purchase. Uninstalling the App does not cancel a subscription. Restore
-      purchases uses the same platform account. Purchases do not transfer between
-      Apple and Google store accounts.
-    </p>
+    <h2>7. Acceptable use and intellectual property</h2>
+    <p>Use the app lawfully and respect the rules of GSA, the stores, and other providers. Do not seek unauthorized access, evade service limits, interfere with the app or its providers, misuse personal information in listings, or misrepresent this app as an official government service.</p>
+    <p>Optional Google or Apple sign-in creates a Firebase account; guest use remains available. Protect your provider account and do not access another person's account without authorization. Sign-in does not synchronize device-only saved listings, notes, locations, or alerts. Signing out or deleting your Firebase account does not cancel a subscription billed by Apple or Google. Account deletion is available in Settings and through the support contact described in the Privacy Policy.</p>
+    <p>The app's original design, code, and branding are protected by applicable intellectual-property laws. Agency names, seals, listing materials, and third-party assets remain subject to their owners' rights or applicable public-domain rules. Their display does not imply endorsement or grant rights beyond those permitted by law.</p>
+    <p>The Pro introduction animation, “Businessman flies up with rocket” by Abdul Latif, is provided through LottieFiles under the Lottie Simple License (FL 9.13.21). That license, rather than restrictions on the app's original content, governs the animation and its derivatives. A copy of the license is bundled with the animation.</p>
+    <p><a href="https://lottiefiles.com/free-animation/businessman-flies-up-with-rocket-gm3rBUebOt">https://lottiefiles.com/free-animation/businessman-flies-up-with-rocket-gm3rBUebOt</a> <a href="https://lottiefiles.com/page/license">https://lottiefiles.com/page/license</a></p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Acceptable Use and Intellectual Property</h2>
-    <p>
-      You may use the App only for lawful purposes and in compliance with
-      applicable laws, auction rules, platform rules, and these Terms. You agree not
-      to misuse the App, interfere with normal operation, attempt unauthorized
-      access, scrape in a way that burdens services, or use the App to violate
-      official auction terms.
-    </p>
-    <p>
-      The App's design, code, branding, and original content are protected by
-      applicable intellectual property laws. Government data, agency names,
-      trademarks, auction listings, photos, and documents remain the property of
-      their respective owners. Animation assets may be subject to the
-      <a href={lottieLicenseUrl}>LottieFiles license</a> or other third-party
-      licenses where used.
-    </p>
+    <h2>8. Disclaimers and responsibility</h2>
+    <p>To the extent permitted by law, the app is provided as is and as available, without a warranty of completeness, accuracy, uninterrupted service, fitness for a particular purpose, or auction outcome. We do not guarantee condition, authenticity, value, resale proceeds, shipping, pickup, or a successful bid or purchase.</p>
+    <p>To the extent permitted by law, we are not responsible for indirect or consequential losses, lost opportunities, or losses caused by stale information, missed notifications, third-party outages, or reliance on estimates. Nothing in these terms excludes liability or consumer rights that cannot lawfully be excluded.</p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Disclaimers and Limitation of Liability</h2>
-    <p>
-      The App is provided on an "as is" and "as available" basis without warranties
-      of any kind, express or implied, including warranties of merchantability,
-      fitness for a particular purpose, non-infringement, availability, accuracy,
-      completeness, and uninterrupted operation.
-    </p>
-    <p>
-      To the fullest extent permitted by law, we are not liable for indirect,
-      incidental, special, consequential, exemplary, or punitive damages, or for
-      lost profits, lost opportunities, missed bids, missed deadlines, travel costs,
-      pickup costs, inspection costs, removal costs, data loss, or reliance on
-      auction information shown in the App.
-    </p>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Changes and Contact</h2>
-    <p>
-      We may revise these Terms as features, platform requirements, or legal needs
-      change. When we do, we will update the effective date shown above. Continued
-      use of the App after updated Terms take effect means you accept the revised
-      Terms.
-    </p>
-    <p>
-      If you have questions about these Terms, contact us at
-      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
-    </p>
+    <h2>9. Changes and contact</h2>
+    <p>We may improve, change, or discontinue features and revise these terms, subject to applicable store rules, existing subscription obligations, and law. We will update the effective date and provide additional notice when required. If you do not agree to revised terms, stop using the app and manage any active subscription through your store account.</p>
+    <p>For support, billing-routing questions, or questions about these terms, contact <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
   </section>
 </div>
