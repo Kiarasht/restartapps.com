@@ -103,10 +103,25 @@ const { contactEmail } = Astro.props;
   <section class="legal-block" data-reveal>
     <h2>7. Analytics, diagnostics, and Firebase</h2>
     <p>
-      Pgnify does not include a separate analytics or crash-reporting service. It does not include
-      Firebase Analytics, Firebase Crashlytics, or another Firebase runtime SDK. Firebase may be
-      used by Restart Apps to distribute beta builds, but that build-distribution process is not an
-      App runtime service and does not provide app accounts or cloud sync.
+      Pgnify uses Google Analytics for Firebase to understand how the App is used. Firebase may
+      collect app-instance and device identifiers, screens viewed, feature-use events (for example
+      syncing games, starting an analysis, or solving a practice position), app version, device and
+      operating-system details, and approximate region. Usernames, player or opponent names, game
+      moves, PGN files, game identifiers, and search contents are not sent by Pgnify.
+    </p>
+    <p>
+      Usage analytics are on by default. You can turn them off at any time under Settings, Usage
+      analytics; that choice is saved and stops future collection through Firebase Analytics. Where
+      regional consent rules apply, analytics storage also follows the choices you make in the
+      privacy message and stays denied until the consent check is resolved. Firebase Analytics is
+      configured not to collect the advertising identifier, and its ad storage, ad user data, and ad
+      personalization permissions are denied. Pgnify does not use Firebase Analytics data to track
+      you across other companies' apps or websites or for advertising. These Firebase Analytics
+      controls do not change the separate AdMob collection described above.
+    </p>
+    <p>
+      Pgnify does not include Firebase Crashlytics or another crash-reporting service. Firebase is
+      also used by Restart Apps to distribute beta builds.
     </p>
   </section>
 
@@ -127,9 +142,9 @@ const { contactEmail } = Astro.props;
     <h2>9. Your choices and retention</h2>
     <p>
       You can edit your public username and preferences, remove locally saved content using available
-      App controls, change advertising privacy choices when that option is shown, or remove the App
-      to delete its local data. Pgnify has no account-deletion flow because it does not create user
-      accounts or maintain an app-operated cloud account.
+      App controls, turn Usage analytics off in Settings, change advertising privacy choices when
+      that option is shown, or remove the App to delete its local data. Pgnify has no account-deletion
+      flow because it does not create user accounts or maintain an app-operated cloud account.
     </p>
   </section>
 
