@@ -24,6 +24,31 @@ export type AppProject = {
 
 export const apps: AppProject[] = [
   {
+    slug: 'pgnify',
+    name: 'Pgnify: Chess Analysis & Stats',
+    eyebrow: 'Local chess analysis',
+    shortDescription:
+      'Import games, analyze them on your device, and revisit practical coaching moments.',
+    description:
+      'Pgnify turns Chess.com games and PGN files into private, on-device analysis. Explore public player stats, review key moments with the Arasan chess engine, and keep useful games and insights close at hand.',
+    icon: '/assets/pgnify/icon.png',
+    screenshots: [
+      '/assets/pgnify/screenshot-1.png',
+      '/assets/pgnify/screenshot-2.png',
+      '/assets/pgnify/screenshot-3.png'
+    ],
+    status: 'Preparing for beta on iOS and Android',
+    downloads: '0',
+    platforms: ['iOS', 'Android', 'Beta'],
+    highlights: ['Local engine', 'PGN import', 'Player stats', 'Saved reviews'],
+    detailHighlights: [
+      'Import a PGN or use a public Chess.com username without sharing your Chess.com password.',
+      'Analyze games privately on your device with the Arasan engine, then replay and save the moments that matter.',
+      'Explore public player profiles and choose an optional rewarded ad when you want to unlock a full game review.'
+    ],
+    links: []
+  },
+  {
     slug: 'nyc-government-jobs',
     name: 'NYC Government Job Tracker',
     eyebrow: 'NYC job search',

@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import GsaAuctionPrivacy from '../../../components/GsaAuctionPrivacy.astro';
 import NycJobsPrivacy from '../../../components/NycJobsPrivacy.astro';
+import PgnifyPrivacy from '../../../components/PgnifyPrivacy.astro';
 import { apps } from '../../../data/apps';
 
 export function getStaticPaths() {
@@ -12,11 +13,14 @@ export function getStaticPaths() {
 }
 
 const app = Astro.props.app;
+const isPgnify = app.slug === 'pgnify';
 const isGsaAuctionFinder = app.slug === 'gsa-auction-finder';
 const isNycJobs = app.slug === 'nyc-government-jobs';
 const isUsaJobs = app.slug === 'usajobs';
 const isGsaPerDiem = app.slug === 'gsa-per-diem';
-const effectiveDate = isGsaAuctionFinder
+const effectiveDate = isPgnify
+  ? 'October 15, 2026'
+  : isGsaAuctionFinder
   ? 'October 8, 2026'
   : isNycJobs
   ? 'July 17, 2026'
@@ -38,7 +42,9 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
       </div>
 
       {
-        isGsaAuctionFinder ? (
+        isPgnify ? (
+          <PgnifyPrivacy contactEmail={contactEmail} />
+        ) : isGsaAuctionFinder ? (
           <GsaAuctionPrivacy contactEmail={contactEmail} />
         ) : isNycJobs ? (
           <NycJobsPrivacy contactEmail={contactEmail} />

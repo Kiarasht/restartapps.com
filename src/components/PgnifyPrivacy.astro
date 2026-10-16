@@ -1,0 +1,160 @@
+---
+type Props = {
+  contactEmail: string;
+};
+
+const { contactEmail } = Astro.props;
+---
+
+<div class="legal-content">
+  <section class="legal-block" data-reveal>
+    <h2>1. Overview</h2>
+    <p>
+      This Privacy Policy explains how Restart Apps ("we", "us", or "our") handles information
+      in Pgnify: Chess Analysis &amp; Stats (the "App"). Pgnify provides educational chess analysis,
+      saved game reviews, and public player information. The App is intended for adults age 18 and
+      older.
+    </p>
+    <p>
+      Pgnify does not create an app account and does not provide app-operated cloud sync. Chess
+      analysis and coaching explanations run locally on your device.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>2. Information stored on your device</h2>
+    <p>
+      The App can store your public Chess.com username, preferences, imported games, engine
+      evidence, coaching reviews, favorite players, checked player games, and earned review-unlock
+      receipts in private app storage. Pgnify does not ask for your Chess.com password.
+    </p>
+    <p>
+      Android app backup and device transfer are disabled. On iOS, local games, reviews, settings,
+      and unlock receipts may be included in an operating-system device backup. Removing the App or
+      clearing its local data removes locally saved information and earned unlock receipts, although
+      restoring an iOS device backup may restore a local copy.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>3. Chess.com game data</h2>
+    <p>
+      When you check recent games, Pgnify sends the public username you entered and a network
+      request to Chess.com's public API. Chess.com returns public games, player information, and
+      related metadata under its own terms and privacy practices.
+    </p>
+    <p>
+      Checks occur on demand, when relevant player screens open, or during startup and foreground
+      checks when you enable that preference for your own username. Pgnify does not promise instant
+      synchronization and does not monitor players in the background for notifications. See
+      <a href="https://www.chess.com/legal/privacy">Chess.com's Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>4. PGN imports and local analysis</h2>
+    <p>
+      Importing a file uses your operating system's document picker. If you choose a file from a
+      cloud document provider, that provider may download the selected file to your device. Pgnify
+      copies the file text into an import draft and saves it after valid PGN processing.
+    </p>
+    <p>
+      The bundled Arasan engine performs chess analysis locally. Pgnify does not use a language
+      model or remote explanation service, and does not send your PGN text, games, engine evidence,
+      or coaching reviews in advertising requests.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>5. Public player information and portraits</h2>
+    <p>
+      The player directory displays dated public information such as FIDE titles, federation,
+      gender, and ratings. Player details and portraits may come from FIDE, Wikidata, Wikimedia,
+      Chess.com, and linked public websites. Portrait attribution and available license links are
+      shown in the App.
+    </p>
+    <p>
+      When a visible portrait is fetched, Wikimedia or Chess.com's image service receives the image
+      request and ordinary network information such as your IP address. These requests do not include
+      your imported games or Pgnify username setting. Images may be cached locally. See
+      <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Wikimedia's Privacy Policy</a>
+      and <a href="https://www.chess.com/legal/privacy">Chess.com's Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>6. Rewarded advertising and consent</h2>
+    <p>
+      Pgnify may offer an optional Google AdMob rewarded ad to unlock a full review for a selected
+      game. Google's AdMob and User Messaging Platform SDKs may process device and advertising
+      identifiers, IP-derived approximate location, ad interactions, device information, and
+      diagnostics for ad delivery, measurement, consent, and fraud prevention. Depending on your
+      region and choices, an ad may be personalized or non-personalized.
+    </p>
+    <p>
+      Where required, the App presents Google's native consent message and a privacy-options entry
+      in Settings. The current App does not request Apple's App Tracking Transparency permission and
+      does not send a custom user identifier to the advertising SDK. This does not mean third-party
+      SDK collection is absent. Review <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>
+      and <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's AdMob data guidance</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>7. Analytics, diagnostics, and Firebase</h2>
+    <p>
+      Pgnify does not include a separate analytics or crash-reporting service. It does not include
+      Firebase Analytics, Firebase Crashlytics, or another Firebase runtime SDK. Firebase may be
+      used by Restart Apps to distribute beta builds, but that build-distribution process is not an
+      App runtime service and does not provide app accounts or cloud sync.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>8. Permissions and third-party links</h2>
+    <p>
+      Internet access is used for public game data, public player information, portraits, links,
+      advertising, and consent choices. The document picker is used only when you select a PGN file.
+      Pgnify does not request location, contacts, or broad device-storage permission.
+    </p>
+    <p>
+      Social, reference, attribution, and player-site links can open in your browser or another app.
+      The destination service's terms and privacy policy apply.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>9. Your choices and retention</h2>
+    <p>
+      You can edit your public username and preferences, remove locally saved content using available
+      App controls, change advertising privacy choices when that option is shown, or remove the App
+      to delete its local data. Pgnify has no account-deletion flow because it does not create user
+      accounts or maintain an app-operated cloud account.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>10. Security and age eligibility</h2>
+    <p>
+      We rely on platform storage protections and HTTPS for supported network requests, but no
+      storage or transmission method can be guaranteed completely secure. Third-party providers may
+      process information in the United States or other countries under their own safeguards.
+    </p>
+    <p>
+      Pgnify is intended only for adults age 18 and older. We do not knowingly seek personal
+      information from anyone under 18 through the App.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>11. Changes and contact</h2>
+    <p>
+      We may update this Privacy Policy as the App changes. We will revise the effective date shown
+      above and provide additional notice when required.
+    </p>
+    <p>
+      For privacy questions or requests, contact Restart Apps at
+      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+    </p>
+  </section>
+</div>

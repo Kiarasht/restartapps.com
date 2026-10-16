@@ -35,7 +35,12 @@ const app = Astro.props.app;
         </div>
         <div class="hero-actions" data-reveal>
           {app.links.map((link) => <a class="button primary" href={link.href}>{link.label}</a>)}
-          <a class="button secondary" href="/support">Support</a>
+          <a
+            class="button secondary"
+            href={app.slug === 'pgnify' ? `/apps/${app.slug}/support` : '/support'}
+          >
+            Support
+          </a>
         </div>
       </div>
 
@@ -72,6 +77,9 @@ const app = Astro.props.app;
       <div class="legal-link-row" data-reveal>
         <a class="button secondary" href={`/apps/${app.slug}/privacy`}>Privacy Policy</a>
         <a class="button secondary" href={`/apps/${app.slug}/terms`}>Terms of Use</a>
+        {app.slug === 'pgnify' && (
+          <a class="button secondary" href={`/apps/${app.slug}/support`}>Support</a>
+        )}
         {app.slug === 'nyc-government-jobs' && (
           <a class="button secondary" href={`/apps/${app.slug}/delete-account`}>Account Deletion</a>
         )}

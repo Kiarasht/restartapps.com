@@ -17,11 +17,17 @@ npm run build
 
 ## Deploy
 
-Push to `main`. GitHub Actions builds the Astro site and deploys it to GitHub Pages.
+Build the site locally, then publish the generated `dist` directory to the `gh-pages` branch.
+Pushing source changes to `main` does not start a hosted Pages build.
+
+```sh
+npm run build
+```
 
 In GitHub repository settings, set:
 
-- Pages source: GitHub Actions
+- Pages source: Deploy from a branch
+- Branch and folder: `gh-pages` and `/ (root)`
 - Custom domain: `restartapps.com`
 - Enforce HTTPS after GitHub issues the certificate
 
