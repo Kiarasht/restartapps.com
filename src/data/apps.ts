@@ -28,9 +28,9 @@ export const apps: AppProject[] = [
     name: 'Pgnify: Chess Analysis & Stats',
     eyebrow: 'Local chess analysis',
     shortDescription:
-      'Import games, analyze them on your device, and revisit practical coaching moments.',
+      'Review your games on your device, practice your own mistakes, and explore top players.',
     description:
-      'Pgnify turns Chess.com games and PGN files into private, on-device analysis. Explore public player stats, review key moments with the Arasan chess engine, and keep useful games and insights close at hand.',
+      'Pgnify turns Chess.com games and PGN files into private, on-device analysis with the Arasan chess engine. Find the moves that cost you, see the engine’s top lines, practice the positions you got wrong, track your accuracy over time, and explore the world’s titled players on iPhone, iPad, and Android.',
     icon: '/assets/pgnify/icon.png',
     screenshots: [
       '/assets/pgnify/screenshot-1.png',
@@ -40,11 +40,12 @@ export const apps: AppProject[] = [
     status: 'Preparing for beta on iOS and Android',
     downloads: '0',
     platforms: ['iOS', 'Android', 'Beta'],
-    highlights: ['Local engine', 'PGN import', 'Player stats', 'Saved reviews'],
+    highlights: ['Local engine', 'Practice mistakes', 'Accuracy trend', 'Player stats'],
     detailHighlights: [
-      'Import a PGN or use a public Chess.com username without sharing your Chess.com password.',
-      'Analyze games privately on your device with the Arasan engine, then replay and save the moments that matter.',
-      'Explore public player profiles and choose an optional rewarded ad when you want to unlock a full game review.'
+      'Sync a public Chess.com username or import a PGN, with no Chess.com password and no account.',
+      'Analyze games privately on your device: move ratings, an evaluation bar, the engine’s top lines, and Explore mode.',
+      'Practice positions from your own mistakes, follow your accuracy and recurring weaknesses, and browse titled players’ ratings and recent games.',
+      'Choose an optional rewarded ad when you want to open a game’s full review.'
     ],
     links: []
   },
