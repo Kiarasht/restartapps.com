@@ -9,12 +9,13 @@ Pgnify does not create an app account and does not provide app-operated cloud sy
       locally on your device.
 </p> </section> <section class="legal-block" data-reveal> <h2>2. Information stored on your device</h2> <p>
 The App can store the following in its private storage on your device: your public Chess.com
-      username; your preferences, including appearance, board, sound, automatic-check, and
-      usage-analytics settings; the games you sync or import; engine analysis and coaching reviews
-      for those games; earned review-unlock receipts; favorite players and their recently checked
-      public games; a list of Chess.com games you removed, so they are not downloaded again; and
-      cached public responses, such as recent Chess.com game pages, your rating history, player
-      portraits, and opponent profile pictures. Pgnify does not ask for your Chess.com password.
+      username; your preferences, including appearance, board, sound, automatic-check,
+      usage-analytics, and crash-report settings; the games you sync or import; engine analysis and
+      coaching reviews for those games; earned review-unlock receipts; favorite players and their
+      recently checked public games; a list of Chess.com games you removed, so they are not
+      downloaded again; and cached public responses, such as recent Chess.com game pages, your
+      rating history, player portraits, and opponent profile pictures. Pgnify does not ask for your
+      Chess.com password.
 </p> <p>
 Android app backup and device transfer are disabled. On iOS and iPadOS, the App's local data
       may be included in an operating-system device backup. Removing the App or clearing its local
@@ -40,7 +41,7 @@ Importing a file uses your operating system's document picker and reads only the
       a valid game.
 </p> <p>
 The bundled Arasan engine performs all chess analysis locally, including game reviews, move
-      ratings, the evaluation bar, engine lines, Explore, and Practice. Practice positions and
+      ratings, the evaluation bar, top engine moves, Explore, and Practice. Practice positions and
       progress summaries are built from games stored on your device. Pgnify does not use a language
       model or remote explanation service, and it does not send your PGN text, games, engine
       analysis, or coaching reviews to us, to advertising services, or to analytics.
@@ -69,12 +70,13 @@ Where required, the App presents Google's consent message and offers a privacy-o
       SDK collection is absent. Review <a href="https://policies.google.com/privacy">Google's
       Privacy Policy</a> and <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's AdMob data
       guidance</a>.
-</p> </section> <section class="legal-block" data-reveal> <h2>7. Usage analytics and Firebase</h2> <p>
+</p> </section> <section class="legal-block" data-reveal> <h2>7. Usage analytics, crash reports, and Firebase</h2> <p>
 Pgnify uses Google Analytics for Firebase to understand how the App is used. Firebase may
       collect app-instance and device identifiers, screens viewed, feature-use events (for example
-      syncing games, starting an analysis, opening engine lines, or solving a practice position),
-      app version, device and operating-system details, and approximate region. Pgnify does not send
-      usernames, player or opponent names, game moves, PGN files, game identifiers, or search text.
+      syncing games, starting an analysis, opening top engine moves, or solving a practice
+      position), app version, device and operating-system details, and approximate region. Pgnify
+      does not send usernames, player or opponent names, game moves, PGN files, game identifiers, or
+      search text.
 </p> <p>
 Usage analytics are on by default. You can turn them off at any time under Settings, Usage
       analytics; the choice is saved and stops future collection through Firebase Analytics. Where
@@ -85,23 +87,27 @@ Usage analytics are on by default. You can turn them off at any time under Setti
       other companies' apps or websites or for advertising. These controls do not change the
       separate AdMob processing described above.
 </p> <p>
-Pgnify does not include Firebase Crashlytics or another crash-reporting service. Restart Apps
-      also uses Firebase to distribute beta builds. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+If the App crashes, Pgnify can send a crash report through Firebase Crashlytics: the crash
+      stack trace, app version, device model, operating-system version, and a Crashlytics
+      installation identifier. Crash reports do not include usernames, games, PGN text, or search
+      text, and are used only to find and fix bugs. Crash reports are on by default; you can turn
+      them off at any time under Settings, Crash reports, which stops future reports. Restart Apps
+      also uses Firebase to distribute beta builds. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.
 </p> </section> <section class="legal-block" data-reveal> <h2>8. Permissions and third-party links</h2> <p>
 Internet access is used for public game data, public player information, portraits, links,
-      advertising, consent choices, and usage analytics. The document picker is used only when you
-      choose a PGN file. Pgnify does not request location, contacts, camera, microphone,
-      notification, or broad device-storage permission.
+      advertising, consent choices, usage analytics, and crash reports. The document picker is used
+      only when you choose a PGN file. Pgnify does not request location, contacts, camera,
+      microphone, notification, or broad device-storage permission.
 </p> <p>
 Social, reference, attribution, and player-site links open in your browser or another app. The
       destination service's terms and privacy policy apply.
 </p> </section> <section class="legal-block" data-reveal> <h2>9. Your choices and retention</h2> <p>
 You can change your public username and preferences, remove saved games from the Games tab,
-      remove favorite players, turn automatic game checks or usage analytics off in Settings, change
-      advertising privacy choices when that option is shown, or remove the App to delete its local
-      data. Local data stays on your device until you remove it. Pgnify has no account-deletion flow
-      because it does not create user accounts or an app-operated cloud account; for data processed
-      by Google, Chess.com, or Wikimedia, use those providers' controls.
+      remove favorite players, turn automatic game checks, usage analytics, or crash reports off in
+      Settings, change advertising privacy choices when that option is shown, or remove the App to
+      delete its local data. Local data stays on your device until you remove it. Pgnify has no
+      account-deletion flow because it does not create user accounts or an app-operated cloud
+      account; for data processed by Google, Chess.com, or Wikimedia, use those providers' controls.
 </p> </section> <section class="legal-block" data-reveal> <h2>10. Security and age eligibility</h2> <p>
 We rely on platform storage protections and HTTPS for network requests, but no storage or
       transmission method can be guaranteed completely secure. Third-party providers may process
