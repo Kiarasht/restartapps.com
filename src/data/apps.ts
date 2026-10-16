@@ -44,8 +44,7 @@ export const apps: AppProject[] = [
     detailHighlights: [
       'Sync a public Chess.com username or import a PGN, with no Chess.com password and no account.',
       'Analyze games privately on your device: move ratings, an evaluation bar, the engine’s top lines, and Explore mode.',
-      'Practice positions from your own mistakes, follow your accuracy and recurring weaknesses, and browse titled players’ ratings and recent games.',
-      'Choose an optional rewarded ad when you want to open a game’s full review.'
+      'Practice positions from your own mistakes, follow your accuracy and recurring weaknesses, and browse titled players’ ratings and recent games.'
     ],
     links: []
   },
