@@ -17,17 +17,11 @@ npm run build
 
 ## Deploy
 
-Build the site locally, then publish the generated `dist` directory to the `gh-pages` branch.
-Pushing source changes to `main` does not start a hosted Pages build.
-
-```sh
-npm run build
-```
+Pushing to `main` runs the `Deploy to GitHub Pages` workflow, which builds the site and
+publishes it. It can also be run manually from the Actions tab.
 
 In GitHub repository settings, set:
 
-- Pages source: Deploy from a branch
-- Branch and folder: `gh-pages` and `/ (root)`
 - Custom domain: `restartapps.com`
 - Enforce HTTPS after GitHub issues the certificate
 
