@@ -678,10 +678,11 @@ p {
 /* App detail */
 
 .detail-hero {
-  padding: clamp(32px, 5vw, 60px);
+  padding: clamp(36px, 6vw, 72px);
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: clamp(36px, 5vw, 72px);
+  /* Same columns as the home hero, so the phones match its size and spacing. */
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  gap: 40px;
   align-items: center;
 }
 
@@ -709,15 +710,6 @@ p {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.75;
-}
-
-/* App pages use the home page's overlapping phones, larger. */
-.detail-showcase {
-  min-height: 640px;
-}
-
-.detail-showcase .phone-shot {
-  width: min(56%, 300px);
 }
 
 /* Feature cards with a gradient icon chip, like Pgnify's section headers. */
@@ -955,10 +947,6 @@ p {
     min-height: 460px;
   }
 
-  .detail-showcase {
-    min-height: 600px;
-  }
-
   .app-grid,
   .feature-list {
     grid-template-columns: 1fr;
@@ -1021,14 +1009,6 @@ p {
 
   .showcase {
     min-height: 380px;
-  }
-
-  .detail-showcase {
-    min-height: 420px;
-  }
-
-  .detail-showcase .phone-shot {
-    width: 58%;
   }
 
   .phone-shot {
