@@ -61,16 +61,25 @@ export const apps: AppProject[] = [
       '/assets/nyc-government-jobs/screenshot-2.png',
       '/assets/nyc-government-jobs/screenshot-3.png'
     ],
-    status: 'Preparing for launch on iOS and Android',
-    downloads: '0',
-    platforms: ['iOS', 'Android', 'Coming soon'],
+    status: 'Available on iOS and Android',
+    downloads: getDownloadCount('nyc-government-jobs', '10+'),
+    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['Focused filters', 'Job alerts', 'Saved jobs', 'Hiring insights'],
     detailHighlights: [
       'Search NYC government openings by keyword, agency, location, career level, salary, posting date, and more.',
       'Save jobs and searches, create alerts, and set reminders for opportunities that are closing soon.',
       'Explore hiring trends and work locations using current NYC Open Data.'
     ],
-    links: []
+    links: [
+      {
+        label: 'App Store',
+        href: 'https://apps.apple.com/us/app/nyc-government-job-tracker/id6791472621'
+      },
+      {
+        label: 'Google Play',
+        href: 'https://play.google.com/store/apps/details?id=com.restart.nycjobs'
+      }
+    ]
   },
   {
     slug: 'gsa-auction-finder',
@@ -85,16 +94,21 @@ export const apps: AppProject[] = [
       '/assets/gsa-auction-finder/screenshot-2.png',
       '/assets/gsa-auction-finder/screenshot-3.png'
     ],
-    status: 'Preparing for launch on iOS and Android',
-    downloads: '0',
-    platforms: ['iOS', 'Android', 'Coming soon'],
+    status: 'Available on Android',
+    downloads: getDownloadCount('gsa-auction-finder', '1+'),
+    platforms: ['Android', 'Google Play'],
     highlights: ['Auction search', 'Saved listings', 'Comparisons', 'Alerts'],
     detailHighlights: [
       'Search public GSA Auctions listings with filters for category, state, status, bid range, ending window, bidders, agency, reserve details, and ZIP-area distance.',
       'Save listings, personal notes, searches, and ZIP locations locally, then compare auction details side by side.',
       'Use best-effort daily alerts, notification health, official listing links, and Pro options for more alerts and an ad-free experience.'
     ],
-    links: []
+    links: [
+      {
+        label: 'Google Play',
+        href: 'https://play.google.com/store/apps/details?id=com.restart.gsaauctionfinder'
+      }
+    ]
   },
   {
     slug: 'gsa-per-diem',
@@ -175,9 +189,9 @@ export const apps: AppProject[] = [
       '/assets/iss-tracker/screenshot-2.png',
       '/assets/iss-tracker/screenshot-3.png'
     ],
-    status: 'Available on Android',
+    status: 'Available on iOS and Android',
     downloads: getDownloadCount('iss-tracker', '10K+'),
-    platforms: ['Android', 'Google Play'],
+    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['Live tracking', 'Visible passes', 'Location aware', 'Space details'],
     detailHighlights: [
       'Follow the International Space Station with an interface designed around quick, readable tracking.',
@@ -185,6 +199,10 @@ export const apps: AppProject[] = [
       'Learn more about the station with supporting mission and astronaut details.'
     ],
     links: [
+      {
+        label: 'App Store',
+        href: 'https://apps.apple.com/us/app/iss-tracker-orbit-passes/id6803000019'
+      },
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.spacestationtracker'
@@ -195,4 +213,22 @@ export const apps: AppProject[] = [
 
 export function getAppBySlug(slug: string) {
   return apps.find((app) => app.slug === slug);
+}
+
+/** Download display strings ("10K+", "1M+", "0") as a number, for sorting and totals. */
+export function getDownloadValue(downloads: string) {
+  const normalized = downloads.trim().toUpperCase().replace('+', '');
+  const multiplier = normalized.endsWith('K') ? 1_000 : normalized.endsWith('M') ? 1_000_000 : 1;
+  return Number.parseFloat(normalized.replace(/[KM]/g, '')) * multiplier;
+}
+
+/**
+ * How an app's store status is shown on cards and its page: "Coming soon" before launch, "New"
+ * while it has fewer than 100 downloads, and the download count after that.
+ */
+export function getAvailability(app: AppProject) {
+  const downloads = getDownloadValue(app.downloads);
+  if (downloads === 0) return { tone: 'soon', badge: 'Coming soon', value: 'Coming soon', label: 'Store launch' };
+  if (downloads < 100) return { tone: 'new', badge: 'New', value: 'New', label: 'On the stores' };
+  return { tone: 'live', badge: `${app.downloads} downloads`, value: app.downloads, label: 'Downloads' };
 }

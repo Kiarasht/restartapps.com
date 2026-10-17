@@ -5,6 +5,13 @@ const {
   title = 'Restart Apps',
   description = 'Independent mobile apps from Restart Apps.'
 } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, '');
+const navLinks = [
+  { href: '/#apps', label: 'Apps', current: path.startsWith('/apps') },
+  { href: '/support', label: 'Support', current: path === '/support' },
+  { href: '/delete-account', label: 'Account deletion', current: path === '/delete-account' }
+];
 ---
 
 <!doctype html>
@@ -12,21 +19,33 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#111B2D" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F9FBFF" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <nav class="nav" aria-label="Primary navigation">
           <a class="brand" href="/">
-            <span>Restart Apps</span>
+            <img class="brand-mark" src="/favicon.svg" alt="" width="32" height="32" />
+            <span class="brand-name">Restart Apps</span>
           </a>
           <div class="nav-links">
-            <a href="/#apps">Apps</a>
-            <a href="/support">Support</a>
+            {
+              navLinks.map((link) => (
+                <a href={link.href} aria-current={link.current ? 'page' : undefined}>
+                  {link.label}
+                </a>
+              ))
+            }
           </div>
         </nav>
       </header>
@@ -35,8 +54,13 @@ const {
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <span>© {new Date().getFullYear()} Restart Apps</span>
+          <a class="brand footer-brand" href="/">
+            <img class="brand-mark" src="/favicon.svg" alt="" width="24" height="24" />
+            <span>© {new Date().getFullYear()} Restart Apps</span>
+          </a>
           <div class="footer-links">
+            <a href="/support">Support</a>
+            <a href="/delete-account">Account deletion</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Use</a>
           </div>
