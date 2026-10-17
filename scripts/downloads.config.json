@@ -14,7 +14,19 @@
     },
     {
       "slug": "iss-tracker",
-      "googlePlayPackage": "com.restart.spacestationtracker"
+      "googlePlayPackage": "com.restart.spacestationtracker",
+      "appleId": "6803000019",
+      "appleReportStartYear": 2026
+    },
+    {
+      "slug": "nyc-government-jobs",
+      "googlePlayPackage": "com.restart.nycjobs",
+      "appleId": "6791472621",
+      "appleReportStartYear": 2026
+    },
+    {
+      "slug": "gsa-auction-finder",
+      "googlePlayPackage": "com.restart.gsaauctionfinder"
     }
   ]
 }

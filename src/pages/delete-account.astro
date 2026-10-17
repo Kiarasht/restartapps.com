@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactEmail = 'restartapplication@gmail.com';
+const deletionHref = `mailto:${contactEmail}?subject=Account%20deletion%20request`;
+---
+
+<BaseLayout
+  title="Account deletion | Restart Apps"
+  description="How to delete your account and synced data in Restart Apps mobile apps."
+>
+  <main class="main">
+    <section class="section legal-page">
+      <div class="section-header page-hero hero-surface" data-reveal>
+        <p class="eyebrow">Restart Apps</p>
+        <h1>Account deletion</h1>
+        <p>
+          Delete your account from the app's Settings, or email us from the address linked to your
+          account. Include the app name and say that you want the account and its synced data
+          deleted. We may need to verify that you control the account first.
+        </p>
+        <p class="contact-email">
+          <a href={deletionHref} data-mailto-link>{contactEmail}</a>
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href={deletionHref} data-mailto-link>Email a deletion request</a>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-block" data-reveal>
+          <h2>NYC Government Job Tracker</h2>
+          <p>
+            Open <b>Settings</b>, choose <b>Delete Account</b>, and confirm. This removes your
+            Firebase Authentication account and synced saved jobs, saved searches, job alerts,
+            reminders, and related settings. See the
+            <a href="/apps/nyc-government-jobs/delete-account">detailed instructions</a>.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>GSA Auction Finder</h2>
+          <p>
+            Open <b>Settings → Account → Delete Account</b>, confirm, and sign in again with the
+            same provider. This permanently deletes your synchronized library and Firebase account.
+            For Apple accounts, the app also asks Apple to revoke its authorization.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>USAJobs</h2>
+          <p>
+            Signing in with Google is optional. To delete your account and its synced saved jobs,
+            searches, and alerts, email a deletion request from your Google account's email
+            address. Signing out stops future sync on that device.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>Apps without accounts</h2>
+          <p>
+            Pgnify, US Per Diem, and ISS Tracker do not create accounts. Their data stays on your
+            device; delete the app or clear its data to remove it.
+          </p>
+        </section>
+
+        <section class="legal-block" data-reveal>
+          <h2>What may remain</h2>
+          <p>
+            Deleting an account does not cancel a subscription, refund a purchase, or erase purchase
+            records kept by Google Play or Apple. Analytics, advertising, diagnostic, and security
+            records may be kept under the service providers' policies or legal requirements. Each
+            app's Privacy Policy has the details.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('[data-mailto-link]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = link.getAttribute('href');
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
+</script>

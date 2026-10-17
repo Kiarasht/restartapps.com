@@ -19,9 +19,9 @@ const supportHref = `mailto:${supportEmail}?subject=Pgnify%20support`;
 <BaseLayout title={`${app.name} Support | Restart Apps`} description={`Support for ${app.name}.`}>
   <main class="main">
     <section class="section legal-page">
-      <div class="section-header" data-reveal>
-        <p class="eyebrow">Restart Apps</p>
-        <h1>Pgnify Support</h1>
+      <div class="section-header page-hero hero-surface" data-reveal>
+        <p class="eyebrow">{app.name}</p>
+        <h1>Support</h1>
         <p>
           For help with Pgnify, email us with your device model (iPhone, iPad, or Android device), its
           system version, and a short description of what happened. Please do not include passwords or sensitive information.
@@ -29,7 +29,7 @@ const supportHref = `mailto:${supportEmail}?subject=Pgnify%20support`;
         <p class="contact-email">
           <a href={supportHref}>{supportEmail}</a>
         </p>
-        <div class="hero-actions" data-reveal>
+        <div class="hero-actions">
           <a class="button primary" href={supportHref}>Email support</a>
         </div>
       </div>

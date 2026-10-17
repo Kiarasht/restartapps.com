@@ -19,5 +19,19 @@
     "combinedMinimum": 10000,
     "display": "10K+",
     "updatedAt": "2026-10-04"
+  },
+  "nyc-government-jobs": {
+    "googlePlayMinimum": 10,
+    "appStoreDownloads": null,
+    "combinedMinimum": 10,
+    "display": "10+",
+    "updatedAt": "2026-10-17"
+  },
+  "gsa-auction-finder": {
+    "googlePlayMinimum": 1,
+    "appStoreDownloads": null,
+    "combinedMinimum": 1,
+    "display": "1+",
+    "updatedAt": "2026-10-17"
   }
 }
