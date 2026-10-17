@@ -45,14 +45,20 @@ const availability = getAvailability(app);
         }
       </div>
 
-      <div class="screenshot-row" aria-label={`${app.name} screenshots`}>
-        {
-          app.screenshots.map((screenshot, index) => (
-            <div class="screenshot-frame" data-reveal style={`--reveal-delay: ${index * 100}ms`}>
-              <img src={screenshot} alt={`${app.name} screenshot ${index + 1}`} loading="lazy" />
-            </div>
-          ))
-        }
+      <div class="showcase detail-showcase" aria-label={`${app.name} screenshots`}>
+        <div class="phone-stack">
+          {
+            app.screenshots.slice(0, 3).map((screenshot, index) => (
+              <div class={`phone-shot ${['third', 'first', 'second'][index]}`}>
+                <img
+                  src={screenshot}
+                  alt={`${app.name} screenshot ${index + 1}`}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 

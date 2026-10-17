@@ -466,8 +466,7 @@ p {
   inset: 0;
 }
 
-.phone-shot,
-.screenshot-frame {
+.phone-shot {
   position: relative;
   overflow: hidden;
   border: 7px solid var(--frame);
@@ -484,8 +483,7 @@ p {
   will-change: transform;
 }
 
-.phone-shot img,
-.screenshot-frame img {
+.phone-shot img {
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
@@ -713,29 +711,13 @@ p {
   line-height: 1.75;
 }
 
-.screenshot-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  align-items: end;
+/* App pages use the home page's overlapping phones, larger. */
+.detail-showcase {
+  min-height: 640px;
 }
 
-.screenshot-frame {
-  border-radius: 30px;
-  animation: detail-frame-float 7.5s ease-in-out infinite;
-}
-
-.screenshot-frame img {
-  border-radius: 23px;
-}
-
-.screenshot-frame:nth-child(2) {
-  margin-bottom: 28px;
-  animation-delay: 700ms;
-}
-
-.screenshot-frame:nth-child(3) {
-  animation-delay: 1.3s;
+.detail-showcase .phone-shot {
+  width: min(56%, 300px);
 }
 
 /* Feature cards with a gradient icon chip, like Pgnify's section headers. */
@@ -973,20 +955,13 @@ p {
     min-height: 460px;
   }
 
+  .detail-showcase {
+    min-height: 600px;
+  }
+
   .app-grid,
   .feature-list {
     grid-template-columns: 1fr;
-  }
-
-  .screenshot-row {
-    grid-template-columns: repeat(3, minmax(130px, 1fr));
-    overflow-x: auto;
-    padding: 10px 4px 16px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .screenshot-frame {
-    scroll-snap-align: center;
   }
 }
 
@@ -1046,6 +1021,14 @@ p {
 
   .showcase {
     min-height: 380px;
+  }
+
+  .detail-showcase {
+    min-height: 420px;
+  }
+
+  .detail-showcase .phone-shot {
+    width: 58%;
   }
 
   .phone-shot {
@@ -1157,15 +1140,5 @@ p {
   }
   50% {
     transform: translate3d(8px, -10px, 0) rotate(2deg);
-  }
-}
-
-@keyframes detail-frame-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -10px;
   }
 }
