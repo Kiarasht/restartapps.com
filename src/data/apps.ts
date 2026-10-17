@@ -75,6 +75,10 @@ export const apps: AppProject[] = [
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.nycjobs'
+      },
+      {
+        label: 'Galaxy Store',
+        href: 'https://galaxystore.samsung.com/detail/com.restart.nycjobs'
       }
     ]
   },
@@ -135,6 +139,10 @@ export const apps: AppProject[] = [
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.gsaperdiem'
+      },
+      {
+        label: 'Galaxy Store',
+        href: 'https://galaxystore.samsung.com/detail/com.restart.gsaperdiem'
       }
     ]
   },
@@ -167,6 +175,10 @@ export const apps: AppProject[] = [
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.usajobs'
+      },
+      {
+        label: 'Galaxy Store',
+        href: 'https://galaxystore.samsung.com/detail/com.restart.usajobs'
       }
     ]
   },
@@ -199,6 +211,10 @@ export const apps: AppProject[] = [
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.restart.spacestationtracker'
+      },
+      {
+        label: 'Galaxy Store',
+        href: 'https://galaxystore.samsung.com/detail/com.restart.spacestationtracker'
       }
     ]
   }
