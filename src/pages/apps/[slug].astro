@@ -27,9 +27,6 @@ const availability = getAvailability(app);
           </div>
         </div>
         <p class="detail-copy" data-reveal>{app.description}</p>
-        <div class="pill-row" aria-label={`${app.name} platforms`} data-reveal>
-          {app.platforms.map((platform) => <span class="pill">{platform}</span>)}
-        </div>
         <div class="hero-metrics" data-reveal>
           <div class={`metric is-${availability.tone}`}>
             <strong>{availability.value}</strong>

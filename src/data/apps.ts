@@ -13,7 +13,6 @@ export type AppProject = {
   screenshots: string[];
   status: string;
   downloads: string;
-  platforms: string[];
   highlights: string[];
   detailHighlights: string[];
   links: {
@@ -39,7 +38,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Preparing for beta on iOS and Android',
     downloads: '0',
-    platforms: ['iOS', 'Android', 'Beta'],
     highlights: ['Local engine', 'Practice mistakes', 'Accuracy trend', 'Player stats'],
     detailHighlights: [
       'Sync a public Chess.com username or import a PGN, with no Chess.com password and no account.',
@@ -63,7 +61,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('nyc-government-jobs', '10+'),
-    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['Focused filters', 'Job alerts', 'Saved jobs', 'Hiring insights'],
     detailHighlights: [
       'Search NYC government openings by keyword, agency, location, career level, salary, posting date, and more.',
@@ -96,7 +93,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Available on Android',
     downloads: getDownloadCount('gsa-auction-finder', '1+'),
-    platforms: ['Android', 'Google Play'],
     highlights: ['Auction search', 'Saved listings', 'Comparisons', 'Alerts'],
     detailHighlights: [
       'Search public GSA Auctions listings with filters for category, state, status, bid range, ending window, bidders, agency, reserve details, and ZIP-area distance.',
@@ -125,7 +121,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('gsa-per-diem', '1K+'),
-    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['GSA rates', 'Trip reports', 'M&IE breakdowns', 'Favorites'],
     detailHighlights: [
       'Look up GSA per diem rates by fiscal year, state, city, county, or ZIP code.',
@@ -158,7 +153,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('usajobs', '1K+'),
-    platforms: ['iOS', 'Android', 'App Store', 'Google Play', 'Galaxy Store'],
     highlights: ['Advanced filters', 'Job alerts', 'Saved jobs', 'Cloud sync'],
     detailHighlights: [
       'Build precise federal job searches with location, agency, schedule, pay, remote, and hiring path filters.',
@@ -191,7 +185,6 @@ export const apps: AppProject[] = [
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('iss-tracker', '10K+'),
-    platforms: ['iOS', 'Android', 'App Store', 'Google Play'],
     highlights: ['Live tracking', 'Visible passes', 'Location aware', 'Space details'],
     detailHighlights: [
       'Follow the International Space Station with an interface designed around quick, readable tracking.',
