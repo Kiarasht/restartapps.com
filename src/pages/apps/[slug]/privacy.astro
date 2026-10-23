@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import GsaAuctionPrivacy from '../../../components/GsaAuctionPrivacy.astro';
 import NycJobsPrivacy from '../../../components/NycJobsPrivacy.astro';
 import PgnifyPrivacy from '../../../components/PgnifyPrivacy.astro';
+import IssTrackerPrivacy from '../../../components/IssTrackerPrivacy.astro';
 import { apps } from '../../../data/apps';
 
 export function getStaticPaths() {
@@ -18,7 +19,10 @@ const isGsaAuctionFinder = app.slug === 'gsa-auction-finder';
 const isNycJobs = app.slug === 'nyc-government-jobs';
 const isUsaJobs = app.slug === 'usajobs';
 const isGsaPerDiem = app.slug === 'gsa-per-diem';
-const effectiveDate = isPgnify
+const isIssTracker = app.slug === 'iss-tracker';
+const effectiveDate = isIssTracker
+  ? 'October 22, 2026'
+  : isPgnify
   ? 'October 16, 2026'
   : isGsaAuctionFinder
   ? 'October 8, 2026'
@@ -42,7 +46,9 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
       </div>
 
       {
-        isPgnify ? (
+        isIssTracker ? (
+          <IssTrackerPrivacy />
+        ) : isPgnify ? (
           <PgnifyPrivacy contactEmail={contactEmail} />
         ) : isGsaAuctionFinder ? (
           <GsaAuctionPrivacy contactEmail={contactEmail} />
