@@ -31,8 +31,8 @@ const effectiveDate = isGsaPerDiem
   ? 'October 8, 2026'
   : isNycJobs
   ? 'July 17, 2026'
-  : isUsaJobs || isGsaPerDiem
-    ? 'June 30, 2026'
+  : isUsaJobs
+    ? 'November 2, 2026'
     : 'August 28, 2025';
 const contactEmail = 'restartapplication@gmail.com';
 const googlePrivacyUrl = 'https://policies.google.com/privacy';
@@ -69,8 +69,9 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
               </p>
               <p>
                 The App helps users search federal job listings, save jobs, save search filters,
-                create job alerts, receive local notifications, and optionally sign in with Google
-                to personalize and sync parts of the experience.
+                track your applications, create job alerts, receive local notifications, and
+                optionally sign in with Google or Apple to personalize and sync parts of the
+                experience.
               </p>
               <p>
                 The App is not an official government application and is not affiliated with,
@@ -83,24 +84,26 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
               <h2>Information You Choose to Store</h2>
               <p>
                 The App stores information needed for app features to work. This may include saved
-                jobs, saved searches, search history, filter selections, onboarding state, job alert
-                preferences, saved job reminder preferences, notification settings, and related app
-                state.
+                jobs, the application status and notes you add to saved jobs, saved searches, search
+                history, filter selections, onboarding state, job alert preferences, saved job
+                reminder preferences, notification settings, and related app state.
               </p>
               <p>
                 If you use guest mode, this information is generally stored on your device. If you
-                sign in with Google, selected user activity such as saved jobs, job alerts, and
-                search history may be synced with Firebase so you can continue across devices.
+                sign in, selected user activity such as saved jobs and their application status and
+                notes, job alerts, and search history may be synced with Firebase so you can continue
+                across devices.
               </p>
             </section>
 
             <section class="legal-block" data-reveal>
-              <h2>Google Sign-In and Firebase</h2>
+              <h2>Sign-In and Firebase</h2>
               <p>
-                If you choose to sign in with Google, the App uses Google Sign-In and Firebase
-                Authentication. Google and Firebase may provide access to basic account information
-                associated with your Google account, such as your display name, email address,
-                profile photo, and authentication identifiers needed to keep you signed in.
+                If you choose to sign in, the App uses Google Sign-In or Sign in with Apple with
+                Firebase Authentication. Your sign-in provider and Firebase may provide access to
+                basic account information associated with your account, such as your display name,
+                email address, profile photo where available, and authentication identifiers needed
+                to keep you signed in.
               </p>
               <p>
                 The App may use Firebase services, including Firebase Authentication, Cloud
@@ -144,6 +147,17 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
             </section>
 
             <section class="legal-block" data-reveal>
+              <h2>Analytics and Crash Reports</h2>
+              <p>
+                The App uses Firebase Analytics and Firebase Crashlytics to understand app usage and
+                diagnose crashes. This can include device and app information, interaction events,
+                and crash traces. It does not include your search text or notes. Where the law
+                requires approval, nothing is collected until you allow it. You can turn analytics
+                and crash reports off separately in Settings at any time.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
               <h2>Advertising and Google AdMob</h2>
               <p>
                 The App may include advertising features through Google AdMob. Google and its
@@ -166,7 +180,7 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
                 <li>Save your jobs, searches, filters, reminders, and job alert preferences.</li>
                 <li>Sync selected saved activity across devices when you sign in.</li>
                 <li>Create and deliver job alert notifications and saved job reminders.</li>
-                <li>Show your Google profile information in the App when signed in.</li>
+                <li>Show your profile information in the App when signed in.</li>
                 <li>Measure app usage, improve reliability, and troubleshoot crashes.</li>
                 <li>Support advertising, consent handling, ad measurement, and fraud prevention.</li>
               </ul>
@@ -181,7 +195,7 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
               </p>
               <ul>
                 <li>USAJOBS data services, which provide the federal job information displayed in the App.</li>
-                <li>Google Sign-In and Firebase Authentication, if you choose to sign in.</li>
+                <li>Google Sign-In, Sign in with Apple, and Firebase Authentication, if you choose to sign in.</li>
                 <li>Cloud Firestore, Firebase Analytics, and Firebase Crashlytics.</li>
                 <li>Mapping, platform, and device location services.</li>
                 <li>Google AdMob and related Google advertising or consent tools, if ads are enabled.</li>
@@ -196,10 +210,30 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
                 uninstall the App, or use available in-app controls.
               </p>
               <p>
-                If you sign in with Google, synced app data may remain associated with your Firebase
-                user account until it is deleted or overwritten according to app functionality.
-                Your authentication state is managed through Google and Firebase and may persist
-                until you sign out.
+                If you sign in, synced app data, including application status and notes on saved
+                jobs, stays associated with your Firebase user account until you remove it in the
+                App or delete your account. Your authentication state is managed through your
+                sign-in provider and Firebase and may persist until you sign out.
+              </p>
+              <p>
+                Signing out stops syncing and removes that account's library from the device, but it
+                does not delete synced data already stored in Firebase.
+              </p>
+            </section>
+
+            <section class="legal-block" data-reveal>
+              <h2>Account Deletion</h2>
+              <p>
+                You can delete your account from Settings in the App. This removes your Firebase
+                Authentication account and synced App data, such as saved jobs and their notes,
+                search history, alert preferences, and related settings. You may need to sign in
+                again to confirm.
+              </p>
+              <p>
+                You may also contact us at
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with deletion questions. Some data handled by
+                third-party services may remain subject to those services' own retention and deletion
+                practices.
               </p>
             </section>
 
@@ -207,7 +241,8 @@ const officialUsaJobsUrl = 'https://www.usajobs.gov/';
               <h2>Your Choices</h2>
               <ul>
                 <li>You can use guest mode instead of signing in.</li>
-                <li>You can sign out to stop future account-based sync on that device.</li>
+                <li>You can sign out to stop account-based sync on that device.</li>
+                <li>You can turn analytics and crash reports off separately in Settings.</li>
                 <li>You can deny or revoke location and notification permissions in device settings.</li>
                 <li>You can manage advertising consent choices where the App presents privacy options.</li>
                 <li>You can clear saved jobs, alerts, and search history where those controls are available.</li>
