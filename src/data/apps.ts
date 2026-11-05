@@ -119,9 +119,9 @@ export const apps: AppProject[] = [
       'US Per Diem helps travelers look up GSA lodging and meals and incidental expense rates by fiscal year, state, city, county, or ZIP code, then generate per diem expense reports for trips.',
     icon: '/assets/gsa-per-diem/icon.png',
     screenshots: [
-      '/assets/gsa-per-diem/screenshot-1-v3.png',
-      '/assets/gsa-per-diem/screenshot-2-v3.png',
-      '/assets/gsa-per-diem/screenshot-3-v3.png'
+      '/assets/gsa-per-diem/screenshot-1-v4.png',
+      '/assets/gsa-per-diem/screenshot-2-v4.png',
+      '/assets/gsa-per-diem/screenshot-3-v4.png'
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('gsa-per-diem', '1K+'),
@@ -155,9 +155,9 @@ export const apps: AppProject[] = [
       'USAJobs helps job seekers explore federal openings with focused filters, saved jobs, alert digests, synced activity, and reminders for jobs that are closing soon.',
     icon: '/assets/usajobs/icon.png',
     screenshots: [
-      '/assets/usajobs/screenshot-1-v2.png',
-      '/assets/usajobs/screenshot-2-v2.png',
-      '/assets/usajobs/screenshot-3-v2.png'
+      '/assets/usajobs/screenshot-1-v3.png',
+      '/assets/usajobs/screenshot-2-v3.png',
+      '/assets/usajobs/screenshot-3-v3.png'
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('usajobs', '1K+'),
@@ -191,9 +191,9 @@ export const apps: AppProject[] = [
       'ISS Tracker gives space fans a clear way to follow the station, explore current position data, and plan when to look up for visible passes.',
     icon: '/assets/iss-tracker/icon.png',
     screenshots: [
-      '/assets/iss-tracker/screenshot-1-v2.png',
-      '/assets/iss-tracker/screenshot-2-v2.png',
-      '/assets/iss-tracker/screenshot-3-v2.png'
+      '/assets/iss-tracker/screenshot-1-v3.png',
+      '/assets/iss-tracker/screenshot-2-v3.png',
+      '/assets/iss-tracker/screenshot-3-v3.png'
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('iss-tracker', '10K+'),

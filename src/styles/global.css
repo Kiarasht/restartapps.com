@@ -485,7 +485,9 @@ p {
 
 .phone-shot img {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  /* Each screenshot keeps its own shape (store sets are 9:16 or iPhone-tall); 9:16 until it loads. */
+  aspect-ratio: auto 9 / 16;
+  height: auto;
   object-fit: cover;
   border-radius: 27px;
 }
