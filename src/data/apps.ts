@@ -53,11 +53,11 @@ export const apps: AppProject[] = [
     shortDescription: 'Search, save, filter, and track New York City government job opportunities.',
     description:
       'NYC Government Job Tracker helps job seekers explore New York City government openings with focused filters, saved jobs, hiring insights, alerts, reminders, and optional cloud sync.',
-    icon: '/assets/nyc-government-jobs/icon.png',
+    icon: '/assets/nyc-government-jobs/icon-v3.png',
     screenshots: [
-      '/assets/nyc-government-jobs/screenshot-1.png',
-      '/assets/nyc-government-jobs/screenshot-2.png',
-      '/assets/nyc-government-jobs/screenshot-3.png'
+      '/assets/nyc-government-jobs/screenshot-1-v2.png',
+      '/assets/nyc-government-jobs/screenshot-2-v2.png',
+      '/assets/nyc-government-jobs/screenshot-3-v2.png'
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('nyc-government-jobs', '10+'),

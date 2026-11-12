@@ -1,185 +1,245 @@
 ---
 const { contactEmail } = Astro.props;
-const googlePrivacyUrl = 'https://policies.google.com/privacy';
-const cityJobsUrl = 'https://cityjobs.nyc.gov/jobs';
 ---
 
 <div class="legal-content">
   <section class="legal-block" data-reveal>
     <h2>Overview</h2>
     <p>
-      This Privacy Policy explains how Restart Apps ("we", "us", or "our") handles information
-      when you use the NYC Government Job Tracker mobile application, also displayed in parts of
-      the App as NYC Jobs (the "App" or "Service").
+      This Privacy Policy explains how Restart Apps ("we", "us", or "our") handles information when
+      you use the NYC Jobs mobile application, listed in some stores as NYC Government Job Tracker
+      (the "App" or "Service").
     </p>
     <p>
-      The App helps users search New York City government job listings, save jobs and searches,
-      create local alerts and reminders, review hiring insights, and optionally sign in with Google
-      or Apple to sync selected activity.
-    </p>
-    <p>
-      The App is independent and is not affiliated with, endorsed by, or operated by the City of
-      New York or any City agency.
+      The App helps users search NYC government job listings, save jobs, save search filters, create
+      local job alerts, and optionally sign in with Google or Apple to personalize the experience.
+      The App is not an official City of New York application and is not affiliated with, endorsed
+      by, or sponsored by the City of New York.
     </p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Information You Store and Account Information</h2>
+    <h2>Information We Collect</h2>
+    <h3>Information you choose to store in the App</h3>
     <p>
-      The App stores information needed for its features, including saved jobs, saved searches,
-      search history, filters, onboarding state, job alerts, reminders, alert matches, notification
-      settings, and related app preferences. Guest data is generally stored on your device.
+      The App stores certain information locally on your device so features can work properly. This
+      can include saved searches, saved jobs, the application status and notes you add to saved
+      jobs, filter selections, onboarding state, job alert preferences, reminder settings, and alert
+      match activity.
     </p>
+    <h3>Account sign-in and Firebase</h3>
     <p>
       If you choose to sign in, the App uses Google Sign-In or Sign in with Apple with Firebase
-      Authentication. We may receive your display name, email address, profile photo where
-      available, sign-in provider, and authentication identifiers. Selected app activity and
-      settings may be synced to Firebase Cloud Firestore under your Firebase user ID.
-    </p>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Job Search, Location, and Notifications</h2>
-    <p>
-      Search terms and filters are sent to NYC Open Data so matching listings can be returned. The
-      App may use mapping and geocoding services to display job locations.
+      Authentication. Through that process, your sign-in provider and Firebase may provide us access
+      to basic account information associated with your account, such as your display name, email
+      address, profile photo where available, and authentication identifiers needed to keep you
+      signed in.
     </p>
     <p>
-      <b>Approximate location:</b> If you choose current-location search and grant permission, the
-      App uses your approximate device location to create a location query. We do not operate a
-      server that stores your precise GPS location.
+      When you are signed in, the App may use Firebase Cloud Firestore to sync your saved jobs, the
+      application status and notes you add to them, saved search history, filter selections, job
+      alert preferences, reminder settings, and related app settings so you can continue using those
+      features across devices.
+    </p>
+    <h3>Job search and alert activity</h3>
+    <p>
+      When you search for jobs, apply filters, open job details, or create alerts, the App sends the
+      related search parameters to NYC Open Data so matching job listings can be returned. Alert
+      schedules and related filter settings are stored locally on your device and, if you are signed
+      in, may also be synced with Firebase Cloud Firestore.
+    </p>
+    <h3>Permissions</h3>
+    <p>
+      Notifications: If you grant notification permission, the App can send local job alert
+      notifications to your device.
     </p>
     <p>
-      <b>Notifications:</b> If you grant permission, the App can send local job alerts, alert-match
-      notices, and saved-job reminders to your device.
+      Approximate location: The App may request approximate location permission only when you choose
+      to use current-location job search features. Your device's geocoding service (Google on
+      Android, Apple on iOS) turns it into a place name to fill in the search; it is not sent to our
+      servers.
     </p>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Analytics, Diagnostics, and Performance</h2>
+    <p>
+      Calendar: If you choose Add to Calendar on a job, the App opens your device's calendar with
+      the job's title and closing date filled in so you can save the event. The App does not read
+      your calendar.
+    </p>
+    <h3>Analytics, diagnostics, and performance</h3>
     <p>
       The App uses Firebase Analytics, Firebase Crashlytics, and Firebase Performance Monitoring to
-      understand feature usage, diagnose crashes and errors, and improve reliability and
-      performance. These services may process interaction events, app instance or installation
-      identifiers, crash logs, diagnostic and performance data, device and operating-system
-      information, IP address, and general region.
+      understand app usage, diagnose crashes, and improve reliability and performance. This can
+      include device and app information, interaction events, crash traces, and performance data. It
+      does not include your search text, your notes, or your account identifiers. Where the law
+      requires approval, nothing is collected until you allow it. You can turn analytics and crash
+      reports off separately in Settings at any time; performance data follows the analytics
+      setting.
     </p>
+    <h3>App integrity and Insights data</h3>
     <p>
-      When you are signed in, the App may associate Firebase Analytics and Crashlytics records with
-      your Firebase user ID. We do not intentionally send the text of your job-search keywords to
-      Firebase Analytics.
+      The App uses Firebase App Check, with Google Play Integrity on Android and Apple App Attest on
+      iOS, to confirm requests to our Firebase services come from a genuine copy of the App. Hiring
+      Insights figures are prepared from NYC Open Data and downloaded from Firebase Cloud Storage;
+      those requests include standard network information such as your IP address.
     </p>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Advertising and Consent</h2>
+    <h3>Advertising and Google AdMob</h3>
     <p>
-      The free version may show ads through Google AdMob. Google and its partners may process the
+      The App may include advertising features through Google AdMob. If a version of the App
+      includes AdMob, Google and its partners may automatically collect information such as your
       advertising ID, device identifiers, IP address, approximate location, device and operating
-      system details, and ad interaction data to serve, measure, secure, and improve ads.
+      system details, and ad interaction data in order to serve, measure, and improve ads.
     </p>
     <p>
-      Depending on your region and choices, ads may be personalized or non-personalized. The App
-      may show a consent message and privacy-options control before or after ads are requested. For
-      more information, review <a href={googlePrivacyUrl}>Google's Privacy Policy</a>.
+      Depending on your region and the App configuration, ads may be personalized or
+      non-personalized, and you may be shown a consent message before ads are requested. For more
+      information about how Google handles data, review Google's Privacy Policy: <a
+      href="https://policies.google.com/privacy" target="_blank" rel="noopener
+      noreferrer">https://policies.google.com/privacy</a>
     </p>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Purchases and NYCJobs Pro</h2>
+    <h3>Purchases and NYCJobs Pro</h3>
     <p>
       If you buy or restore the one-time NYCJobs Pro upgrade, Google Play or Apple's App Store
-      processes the transaction. The App receives purchase and entitlement information needed to
-      complete, verify, restore, and remember the upgrade. We do not receive your full payment-card
-      details. A Pro entitlement flag is also stored on your device.
+      processes the transaction under its own terms and privacy policy. The App receives purchase
+      and entitlement information needed to complete, verify, restore, and remember the upgrade. We
+      do not receive your full payment-card details. A Pro entitlement flag is also stored on your
+      device.
     </p>
   </section>
 
   <section class="legal-block" data-reveal>
     <h2>How We Use Information</h2>
-    <ul>
-      <li>Retrieve and display job listings and hiring insights from NYC Open Data.</li>
-      <li>Provide saved jobs, searches, alerts, reminders, maps, and optional cloud sync.</li>
-      <li>Authenticate users and display available profile information.</li>
-      <li>Measure usage, diagnose errors and crashes, and monitor performance.</li>
-      <li>Serve ads, manage consent, measure ads, and prevent fraud.</li>
-      <li>Complete and restore the NYCJobs Pro entitlement.</li>
-      <li>Respond to support, privacy, and deletion requests.</li>
-    </ul>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Data Sharing and Service Providers</h2>
-    <p>We do not sell your personal information.</p>
-    <p>The App relies on services that process data under their own terms and policies, including:</p>
-    <ul>
-      <li>NYC Open Data and official CityJobs pages.</li>
-      <li>Google Sign-In, Sign in with Apple, Firebase Authentication, and Cloud Firestore.</li>
-      <li>Firebase Analytics, Firebase Crashlytics, and Firebase Performance Monitoring.</li>
-      <li>Google Maps, geocoding, device-location, and mobile-platform services.</li>
-      <li>Google AdMob and Google User Messaging Platform.</li>
-      <li>Google Play Billing, Apple StoreKit, and the applicable app store.</li>
-    </ul>
     <p>
-      We require service providers that process data for us to handle it consistently with
-      applicable law, their contractual obligations, and protections appropriate to their role.
+      We use information handled by the App to retrieve and display job listings and job details
+      from NYC Open Data; save your jobs, searches, and filter preferences on your device; sync
+      saved jobs, saved search history, alert preferences, and related settings across your
+      signed-in devices; create and deliver local job alert notifications; let you sign in with
+      Google or Apple and show your profile information in the App; measure app usage, diagnose
+      crashes, and monitor performance; process and restore the NYCJobs Pro entitlement through the
+      applicable app store; respond to support, privacy, and data deletion requests; and, if ads are
+      enabled, support advertising, consent handling, ad measurement, and fraud prevention through
+      Google AdMob and related Google services.
     </p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Storage, Retention, and Deletion</h2>
+    <h2>Data Sharing and Third Parties</h2>
     <p>
-      Local app data remains until you remove it, clear app data, or uninstall the App. Signed-in
-      sync data remains in Firebase until you remove it through the App or delete your account.
-      Signing out stops future account-based sync on that device but does not delete existing cloud
-      data.
+      We do not sell your personal information.
     </p>
     <p>
-      You can delete your signed-in account from Settings. This removes the Firebase Authentication
-      account and synced App data stored in Firestore. You can also review the
-      <a href="/apps/nyc-government-jobs/delete-account">account-deletion instructions</a> or email
-      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      The App relies on third-party services and public data providers that may process data in
+      accordance with their own terms and privacy policies, including NYC Open Data; Google Sign-In,
+      Sign in with Apple, and Firebase Authentication, if you choose to sign in; Firebase Cloud
+      Firestore, if you choose to use signed-in sync; Firebase Analytics, Firebase Crashlytics, and
+      Firebase Performance Monitoring; Firebase App Check with Google Play Integrity or Apple App
+      Attest, and Firebase Cloud Storage for Insights data; Google Maps on Android, Apple Maps on
+      iOS, and the geocoding, device-location, and platform services used for maps and optional
+      location-aware search; Google AdMob and related Google advertising or consent tools, if
+      advertising is enabled; and Google Play Billing or Apple StoreKit and the applicable app store
+      when you purchase or restore NYCJobs Pro.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Data Storage and Retention</h2>
+    <p>
+      Saved jobs, search history, filters, onboarding status, alert settings, reminder settings, and
+      alert match activity are stored locally on your device until you remove them, clear app data,
+      or uninstall the App.
+    </p>
+    <p>
+      If you sign in with Google or Apple, your authentication state is managed through your sign-in
+      provider and Firebase and may persist until you sign out. While signed in, saved jobs, their
+      application status and notes, saved search history, filter selections, job alert preferences,
+      reminder settings, and related app settings may also be stored in Firebase Cloud Firestore
+      under your Firebase Authentication user ID until you remove them in the App or delete your
+      account.
+    </p>
+    <p>
+      Signing out stops syncing and removes that account's library from the device, but it does not
+      delete synced data already stored in Firebase.
     </p>
     <p>
       Analytics, advertising, diagnostic, performance, transaction, and app-store records are
-      retained according to our configuration, operational needs, legal obligations, and each
-      provider's retention practices. Account deletion does not erase purchase records maintained
-      by Google Play or Apple.
+      retained according to our service configuration, operational needs, legal obligations, and the
+      retention practices of the applicable third-party provider. Account deletion does not cancel
+      or erase purchase records maintained by Google Play or Apple.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Data Deletion Requests</h2>
+    <p>
+      You can delete your signed-in account from Settings in the App. Account deletion removes your
+      Firebase Authentication account and synced App data stored in Firebase, such as synced saved
+      jobs and their notes, search history, alert preferences, and related settings.
+    </p>
+    <p>
+      You may also contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with deletion
+      questions. Some data handled by third-party services may remain subject to those services' own
+      retention and deletion practices.
+    </p>
+    <p>
+      You can remove local data on your device by deleting saved content in the App, clearing the
+      App's data from your device settings where available, or uninstalling the App.
+    </p>
+    <p>
+      Instructions for deleting your account, including without the App, are on the
+      <a href="/apps/nyc-government-jobs/delete-account">account deletion page</a>.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Data Security</h2>
+    <p>
+      We use commercially reasonable measures provided by your device's platform and the third-party
+      services we rely on. However, no method of transmission over the Internet or electronic
+      storage is completely secure, and we cannot guarantee absolute security.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Children's Privacy</h2>
+    <p>
+      The App is not directed to children under 13, and we do not knowingly collect personal
+      information from children under 13.
     </p>
   </section>
 
   <section class="legal-block" data-reveal>
     <h2>Your Choices</h2>
-    <ul>
-      <li>Use guest mode instead of signing in.</li>
-      <li>Sign out to stop future account-based sync on that device.</li>
-      <li>Deny or revoke notification and approximate-location permissions in device settings.</li>
-      <li>Manage advertising consent through in-app privacy options where available.</li>
-      <li>Remove saved content with in-app controls or delete your account from Settings.</li>
-    </ul>
-  </section>
-
-  <section class="legal-block" data-reveal>
-    <h2>Children's Privacy and Security</h2>
     <p>
-      The App is not directed to children under 13, and we do not knowingly collect personal
-      information from children under 13.
-    </p>
-    <p>
-      We use commercially reasonable safeguards, but no method of transmission or electronic
-      storage is completely secure and we cannot guarantee absolute security.
+      You may use the App without signing in. You can sign out to stop future account-based syncing
+      on that device; deny or revoke notification and approximate-location permissions in device
+      settings; manage advertising consent through the privacy options shown in the App where
+      available; remove saved content using in-app controls; and delete your signed-in account and
+      synced App data from Settings.
     </p>
   </section>
 
   <section class="legal-block" data-reveal>
-    <h2>Official Sources, Changes, and Contact</h2>
+    <h2>External Services and Official Sources</h2>
     <p>
-      Verify listings, deadlines, eligibility, and application actions through
-      <a href={cityJobsUrl}>official CityJobs</a>. We may update this policy and will revise the
-      effective date when we do.
+      NYC government job listings and related details shown in the App are sourced from NYC Open
+      Data. Official information and application actions should be verified through CityJobs: <a
+      href="https://cityjobs.nyc.gov/jobs" target="_blank" rel="noopener
+      noreferrer">https://cityjobs.nyc.gov/jobs</a>
     </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Changes to This Privacy Policy</h2>
     <p>
-      Questions may be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      We may update this Privacy Policy from time to time. When we do, we will update the effective
+      date shown above. Your continued use of the App after changes become effective means you
+      accept the updated policy.
+    </p>
+  </section>
+
+  <section class="legal-block" data-reveal>
+    <h2>Contact Us</h2>
+    <p>
+      If you have questions about this Privacy Policy, contact us at: <a
+      href={`mailto:${contactEmail}`}>{contactEmail}</a>
     </p>
   </section>
 </div>
