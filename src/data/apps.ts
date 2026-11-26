@@ -53,11 +53,11 @@ export const apps: AppProject[] = [
     shortDescription: 'Search, save, filter, and track New York City government job opportunities.',
     description:
       'NYC Government Job Tracker helps job seekers explore New York City government openings with focused filters, saved jobs, hiring insights, alerts, reminders, and optional cloud sync.',
-    icon: '/assets/nyc-government-jobs/icon.png',
+    icon: '/assets/nyc-government-jobs/icon-v3.png',
     screenshots: [
-      '/assets/nyc-government-jobs/screenshot-1.png',
-      '/assets/nyc-government-jobs/screenshot-2.png',
-      '/assets/nyc-government-jobs/screenshot-3.png'
+      '/assets/nyc-government-jobs/screenshot-1-v2.png',
+      '/assets/nyc-government-jobs/screenshot-2-v2.png',
+      '/assets/nyc-government-jobs/screenshot-3-v2.png'
     ],
     status: 'Available on iOS and Android',
     downloads: getDownloadCount('nyc-government-jobs', '10+'),
@@ -89,11 +89,11 @@ export const apps: AppProject[] = [
     shortDescription: 'Search, save, compare, and monitor public GSA auction listings.',
     description:
       'GSA Auction Finder helps buyers discover public GSA Auctions listings, search and filter by category, state, bid, deadline, agency, and nearby ZIP area, then save listings, compare options, and open the official listing to bid or buy.',
-    icon: '/assets/gsa-auction-finder/icon.png',
+    icon: '/assets/gsa-auction-finder/icon-v2.png',
     screenshots: [
-      '/assets/gsa-auction-finder/screenshot-1.png',
-      '/assets/gsa-auction-finder/screenshot-2.png',
-      '/assets/gsa-auction-finder/screenshot-3.png'
+      '/assets/gsa-auction-finder/screenshot-1-v2.png',
+      '/assets/gsa-auction-finder/screenshot-2-v2.png',
+      '/assets/gsa-auction-finder/screenshot-3-v2.png'
     ],
     status: 'Available on Android',
     downloads: getDownloadCount('gsa-auction-finder', '1+'),
